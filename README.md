@@ -418,7 +418,7 @@ To use Aspose Words for Cloud Ruby SDK you need to register an account with [Asp
 To install this package do the following:
 update your Gemfile
 ```ruby
-gem 'aspose_words_cloud', '~> 26.1'
+gem 'aspose_words_cloud', '~> 26.2'
 ```
 or install directly
 ```bash
