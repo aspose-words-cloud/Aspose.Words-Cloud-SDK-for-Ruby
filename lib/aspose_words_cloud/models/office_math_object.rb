@@ -135,7 +135,7 @@ module AsposeWordsCloud
       return false unless display_type_validator.valid?(@display_type)
       justification_validator = EnumAttributeValidator.new('String', ["CenterGroup", "Default", "Center", "Left", "Right", "Inline"])
       return false unless justification_validator.valid?(@justification)
-      math_object_type_validator = EnumAttributeValidator.new('String', ["OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"])
+      math_object_type_validator = EnumAttributeValidator.new('String', ["OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Superscript", "None"])
       return false unless math_object_type_validator.valid?(@math_object_type)
 
       return true
@@ -172,7 +172,7 @@ module AsposeWordsCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] math_object_type Object to be assigned
     def math_object_type=(math_object_type)
-      validator = EnumAttributeValidator.new('String', ["OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Supercript"])
+      validator = EnumAttributeValidator.new('String', ["OMath", "OMathPara", "Accent", "Bar", "BorderBox", "Box", "Delimiter", "Degree", "Argument", "Array", "Fraction", "Denominator", "Numerator", "Function", "FunctionName", "GroupCharacter", "Limit", "LowerLimit", "UpperLimit", "Matrix", "MatrixRow", "NAry", "Phantom", "Radical", "SubscriptPart", "SuperscriptPart", "PreSubSuperscript", "Subscript", "SubSuperscript", "Superscript", "None"])
       if math_object_type.to_i == 0
         unless validator.valid?(math_object_type)
           raise ArgumentError, "invalid value for 'math_object_type', must be one of #{validator.allowable_values}."
