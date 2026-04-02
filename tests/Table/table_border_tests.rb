@@ -48,8 +48,8 @@ module AsposeWordsCloud
 
       request = GetBordersRequest.new(name: remote_file_name, node_path: 'tables/1/rows/0/cells/0', folder: remote_data_folder)
 
-      result = @words_api.get_borders(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_borders(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -59,8 +59,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetBordersOnlineRequest.new(document: request_document, node_path: 'tables/1/rows/0/cells/0')
 
-      result = @words_api.get_borders_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_borders_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -73,8 +73,8 @@ module AsposeWordsCloud
 
       request = GetBorderRequest.new(name: remote_file_name, border_type: 'left', node_path: 'tables/1/rows/0/cells/0', folder: remote_data_folder)
 
-      result = @words_api.get_border(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_border(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -84,8 +84,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetBorderOnlineRequest.new(document: request_document, border_type: 'left', node_path: 'tables/1/rows/0/cells/0')
 
-      result = @words_api.get_border_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_border_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -98,8 +98,8 @@ module AsposeWordsCloud
 
       request = DeleteBordersRequest.new(name: remote_file_name, node_path: 'tables/1/rows/0/cells/0', folder: remote_data_folder)
 
-      result = @words_api.delete_borders(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_borders(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -109,8 +109,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = DeleteBordersOnlineRequest.new(document: request_document, node_path: 'tables/1/rows/0/cells/0')
 
-      result = @words_api.delete_borders_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_borders_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -123,8 +123,8 @@ module AsposeWordsCloud
 
       request = DeleteBorderRequest.new(name: remote_file_name, border_type: 'left', node_path: 'tables/1/rows/0/cells/0', folder: remote_data_folder)
 
-      result = @words_api.delete_border(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_border(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -134,8 +134,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = DeleteBorderOnlineRequest.new(document: request_document, border_type: 'left', node_path: 'tables/1/rows/0/cells/0')
 
-      result = @words_api.delete_border_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_border_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -150,8 +150,8 @@ module AsposeWordsCloud
       request_border_properties = Border.new({:BorderType => 'Left', :Color => request_border_properties_color, :DistanceFromText => 6.0, :LineStyle => 'DashDotStroker', :LineWidth => 2.0, :Shadow => true})
       request = UpdateBorderRequest.new(name: remote_file_name, border_type: 'left', border_properties: request_border_properties, node_path: 'tables/1/rows/0/cells/0', folder: remote_data_folder)
 
-      result = @words_api.update_border(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_border(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -163,8 +163,8 @@ module AsposeWordsCloud
       request_border_properties = Border.new({:BorderType => 'Left', :Color => request_border_properties_color, :DistanceFromText => 6, :LineStyle => 'DashDotStroker', :LineWidth => 2, :Shadow => true})
       request = UpdateBorderOnlineRequest.new(document: request_document, border_properties: request_border_properties, border_type: 'left', node_path: 'tables/1/rows/0/cells/0')
 
-      result = @words_api.update_border_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_border_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

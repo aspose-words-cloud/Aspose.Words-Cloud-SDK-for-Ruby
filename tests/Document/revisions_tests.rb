@@ -48,8 +48,8 @@ module AsposeWordsCloud
 
       request = AcceptAllRevisionsRequest.new(name: remote_file_name, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.accept_all_revisions(request)
-      assert_equal false, result.nil?
+       result = @words_api.accept_all_revisions(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -59,8 +59,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = AcceptAllRevisionsOnlineRequest.new(document: request_document)
 
-      result = @words_api.accept_all_revisions_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.accept_all_revisions_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -73,8 +73,8 @@ module AsposeWordsCloud
 
       request = RejectAllRevisionsRequest.new(name: remote_file_name, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.reject_all_revisions(request)
-      assert_equal false, result.nil?
+       result = @words_api.reject_all_revisions(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -84,8 +84,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = RejectAllRevisionsOnlineRequest.new(document: request_document)
 
-      result = @words_api.reject_all_revisions_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.reject_all_revisions_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -98,8 +98,8 @@ module AsposeWordsCloud
 
       request = GetAllRevisionsRequest.new(name: remote_file_name, folder: remote_data_folder)
 
-      result = @words_api.get_all_revisions(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_all_revisions(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -109,8 +109,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetAllRevisionsOnlineRequest.new(document: request_document)
 
-      result = @words_api.get_all_revisions_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_all_revisions_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

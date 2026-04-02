@@ -35,7 +35,7 @@ module AsposeWordsCloud
     def test_reset_cache
       request = ResetCacheRequest.new()
 
-      @words_api.reset_cache(request)
+       @words_api.reset_cache(request)
     end
 
     #
@@ -44,8 +44,8 @@ module AsposeWordsCloud
     def test_get_available_fonts
       request = GetAvailableFontsRequest.new()
 
-      result = @words_api.get_available_fonts(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_available_fonts(request)
+       assert_equal false, result.nil?
     end
   end
 end

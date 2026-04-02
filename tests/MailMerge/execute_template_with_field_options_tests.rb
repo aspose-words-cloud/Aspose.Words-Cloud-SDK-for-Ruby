@@ -52,8 +52,8 @@ module AsposeWordsCloud
       request_options = FieldOptions.new({:CurrentUser => request_options_current_user})
       request = ExecuteMailMergeRequest.new(name: remote_file_name, data: local_data_file, options: request_options, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.execute_mail_merge(request)
-      assert_equal false, result.nil?
+       result = @words_api.execute_mail_merge(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -69,8 +69,8 @@ module AsposeWordsCloud
       request_options = FieldOptions.new({:CurrentUser => request_options_current_user})
       request = ExecuteMailMergeOnlineRequest.new(template: request_template, data: request_data, options: request_options)
 
-      result = @words_api.execute_mail_merge_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.execute_mail_merge_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

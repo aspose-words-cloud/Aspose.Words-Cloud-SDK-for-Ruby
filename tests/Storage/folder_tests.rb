@@ -44,7 +44,7 @@ module AsposeWordsCloud
     def test_create_folder
       request = CreateFolderRequest.new(path: remote_data_folder + '/TestCreateFolder')
 
-      @words_api.create_folder(request)
+       @words_api.create_folder(request)
     end
 
     #
@@ -57,7 +57,7 @@ module AsposeWordsCloud
 
       request = DeleteFolderRequest.new(path: test_delete_folder, recursive: true)
 
-      @words_api.delete_folder(request)
+       @words_api.delete_folder(request)
     end
 
     #
@@ -66,8 +66,8 @@ module AsposeWordsCloud
     def test_get_files_list
       request = GetFilesListRequest.new(path: remote_data_folder)
 
-      result = @words_api.get_files_list(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_files_list(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -80,7 +80,7 @@ module AsposeWordsCloud
 
       request = CopyFolderRequest.new(dest_path: folder_to_copy + 'Dest', src_path: folder_to_copy + 'Src')
 
-      @words_api.copy_folder(request)
+       @words_api.copy_folder(request)
     end
 
     #
@@ -91,7 +91,7 @@ module AsposeWordsCloud
 
       request = MoveFolderRequest.new(dest_path: remote_test_out + '/TestMoveFolderDest_' + generate_uuid, src_path: remote_data_folder + '/TestMoveFolderSrc')
 
-      @words_api.move_folder(request)
+       @words_api.move_folder(request)
     end
   end
 end

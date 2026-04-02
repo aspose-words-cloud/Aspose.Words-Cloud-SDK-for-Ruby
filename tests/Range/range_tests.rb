@@ -48,8 +48,8 @@ module AsposeWordsCloud
 
       request = GetRangeTextRequest.new(name: remote_file_name, range_start_identifier: 'id0.0.0', range_end_identifier: 'id0.0.1', folder: remote_data_folder)
 
-      result = @words_api.get_range_text(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_range_text(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -59,8 +59,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetRangeTextOnlineRequest.new(document: request_document, range_start_identifier: 'id0.0.0', range_end_identifier: 'id0.0.1')
 
-      result = @words_api.get_range_text_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_range_text_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -73,8 +73,8 @@ module AsposeWordsCloud
 
       request = RemoveRangeRequest.new(name: remote_file_name, range_start_identifier: 'id0.0.0', range_end_identifier: 'id0.0.1', folder: remote_data_folder)
 
-      result = @words_api.remove_range(request)
-      assert_equal false, result.nil?
+       result = @words_api.remove_range(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -84,8 +84,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = RemoveRangeOnlineRequest.new(document: request_document, range_start_identifier: 'id0.0.0', range_end_identifier: 'id0.0.1')
 
-      result = @words_api.remove_range_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.remove_range_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -99,8 +99,8 @@ module AsposeWordsCloud
       request_document_parameters = RangeDocument.new({:DocumentName => remote_data_folder + '/NewDoc.docx'})
       request = SaveAsRangeRequest.new(name: remote_file_name, range_start_identifier: 'id0.0.0', document_parameters: request_document_parameters, range_end_identifier: 'id0.0.1', folder: remote_data_folder)
 
-      result = @words_api.save_as_range(request)
-      assert_equal false, result.nil?
+       result = @words_api.save_as_range(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -111,8 +111,8 @@ module AsposeWordsCloud
       request_document_parameters = RangeDocument.new({:DocumentName => remote_data_folder + '/NewDoc.docx'})
       request = SaveAsRangeOnlineRequest.new(document: request_document, range_start_identifier: 'id0.0.0', document_parameters: request_document_parameters, range_end_identifier: 'id0.0.1')
 
-      result = @words_api.save_as_range_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.save_as_range_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -126,8 +126,8 @@ module AsposeWordsCloud
       request_range_text = ReplaceRange.new({:Text => 'Replaced header'})
       request = ReplaceWithTextRequest.new(name: remote_file_name, range_start_identifier: 'id0.0.0', range_text: request_range_text, range_end_identifier: 'id0.0.1', folder: remote_data_folder)
 
-      result = @words_api.replace_with_text(request)
-      assert_equal false, result.nil?
+       result = @words_api.replace_with_text(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -138,8 +138,8 @@ module AsposeWordsCloud
       request_range_text = ReplaceRange.new({:Text => 'Replaced header'})
       request = ReplaceWithTextOnlineRequest.new(document: request_document, range_start_identifier: 'id0.0.0', range_text: request_range_text, range_end_identifier: 'id0.0.1')
 
-      result = @words_api.replace_with_text_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.replace_with_text_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -152,8 +152,8 @@ module AsposeWordsCloud
 
       request = TranslateNodeIdRequest.new(name: remote_file_name, node_id: 'id0.0.0', folder: remote_data_folder)
 
-      result = @words_api.translate_node_id(request)
-      assert_equal false, result.nil?
+       result = @words_api.translate_node_id(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -163,8 +163,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = TranslateNodeIdOnlineRequest.new(document: request_document, node_id: 'id0.0.0')
 
-      result = @words_api.translate_node_id_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.translate_node_id_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

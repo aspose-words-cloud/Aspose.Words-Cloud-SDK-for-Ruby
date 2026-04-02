@@ -48,8 +48,8 @@ module AsposeWordsCloud
 
       request = GetDocumentStatisticsRequest.new(name: remote_file_name, folder: remote_data_folder)
 
-      result = @words_api.get_document_statistics(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_document_statistics(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -59,8 +59,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetDocumentStatisticsOnlineRequest.new(document: request_document)
 
-      result = @words_api.get_document_statistics_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_document_statistics_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

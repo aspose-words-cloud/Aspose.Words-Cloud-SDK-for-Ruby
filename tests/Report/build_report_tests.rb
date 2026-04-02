@@ -49,8 +49,8 @@ module AsposeWordsCloud
       request_report_engine_settings = ReportEngineSettings.new({:DataSourceType => 'Json', :DataSourceName => 'persons'})
       request = BuildReportOnlineRequest.new(template: request_template, data: local_data_file, report_engine_settings: request_report_engine_settings)
 
-      result = @words_api.build_report_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.build_report_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -67,8 +67,8 @@ module AsposeWordsCloud
       request_report_engine_settings = ReportEngineSettings.new({:DataSourceType => 'Json', :ReportBuildOptions => request_report_engine_settings_report_build_options})
       request = BuildReportRequest.new(name: remote_file_name, data: local_data_file, report_engine_settings: request_report_engine_settings, folder: remote_data_folder)
 
-      result = @words_api.build_report(request)
-      assert_equal false, result.nil?
+       result = @words_api.build_report(request)
+       assert_equal false, result.nil?
     end
   end
 end

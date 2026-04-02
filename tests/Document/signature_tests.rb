@@ -64,8 +64,8 @@ module AsposeWordsCloud
 
       request = GetSignaturesRequest.new(name: remote_name, folder: remote_folder)
 
-      result = @words_api.get_signatures(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_signatures(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -75,8 +75,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_folder + '/' + signed_document))
       request = GetSignaturesOnlineRequest.new(document: request_document)
 
-      result = @words_api.get_signatures_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_signatures_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -89,8 +89,8 @@ module AsposeWordsCloud
 
       request = RemoveAllSignaturesRequest.new(name: remote_name, folder: remote_folder)
 
-      result = @words_api.remove_all_signatures(request)
-      assert_equal false, result.nil?
+       result = @words_api.remove_all_signatures(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -100,8 +100,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_folder + '/' + signed_document))
       request = RemoveAllSignaturesOnlineRequest.new(document: request_document)
 
-      result = @words_api.remove_all_signatures_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.remove_all_signatures_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -116,8 +116,8 @@ module AsposeWordsCloud
 
       request = SignDocumentRequest.new(name: remote_name, certificate_path: remote_folder + '/' + remote_certificate_name, certificate_password: certificate_password, folder: remote_folder)
 
-      result = @words_api.sign_document(request)
-      assert_equal false, result.nil?
+       result = @words_api.sign_document(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -131,8 +131,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_folder + '/' + unsigned_document))
       request = SignDocumentOnlineRequest.new(document: request_document, certificate_path: remote_folder + '/' + remote_certificate_name, certificate_password: certificate_password)
 
-      result = @words_api.sign_document_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.sign_document_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

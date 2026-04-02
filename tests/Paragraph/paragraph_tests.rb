@@ -56,8 +56,8 @@ module AsposeWordsCloud
 
       request = GetParagraphRequest.new(name: remote_file_name, index: 0, node_path: 'sections/0', folder: remote_data_folder)
 
-      result = @words_api.get_paragraph(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_paragraph(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -67,8 +67,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetParagraphOnlineRequest.new(document: request_document, index: 0, node_path: 'sections/0')
 
-      result = @words_api.get_paragraph_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_paragraph_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -81,8 +81,8 @@ module AsposeWordsCloud
 
       request = GetParagraphRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder)
 
-      result = @words_api.get_paragraph(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_paragraph(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -95,8 +95,8 @@ module AsposeWordsCloud
 
       request = GetParagraphsRequest.new(name: remote_file_name, node_path: 'sections/0', folder: remote_data_folder)
 
-      result = @words_api.get_paragraphs(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_paragraphs(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -106,8 +106,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetParagraphsOnlineRequest.new(document: request_document, node_path: 'sections/0')
 
-      result = @words_api.get_paragraphs_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_paragraphs_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -120,8 +120,8 @@ module AsposeWordsCloud
 
       request = GetParagraphsRequest.new(name: remote_file_name, folder: remote_data_folder)
 
-      result = @words_api.get_paragraphs(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_paragraphs(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -134,8 +134,8 @@ module AsposeWordsCloud
 
       request = GetRunRequest.new(name: remote_file_name, paragraph_path: 'paragraphs/0', index: 0, folder: remote_data_folder)
 
-      result = @words_api.get_run(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_run(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -145,8 +145,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetRunOnlineRequest.new(document: request_document, paragraph_path: 'paragraphs/0', index: 0)
 
-      result = @words_api.get_run_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_run_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -159,8 +159,8 @@ module AsposeWordsCloud
 
       request = GetRunFontRequest.new(name: remote_file_name, paragraph_path: 'paragraphs/0', index: 0, folder: remote_data_folder)
 
-      result = @words_api.get_run_font(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_run_font(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -170,8 +170,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetRunFontOnlineRequest.new(document: request_document, paragraph_path: 'paragraphs/0', index: 0)
 
-      result = @words_api.get_run_font_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_run_font_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -184,8 +184,8 @@ module AsposeWordsCloud
 
       request = GetRunsRequest.new(name: remote_file_name, paragraph_path: 'sections/0/paragraphs/0', folder: remote_data_folder)
 
-      result = @words_api.get_runs(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_runs(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -195,8 +195,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetRunsOnlineRequest.new(document: request_document, paragraph_path: 'sections/0/paragraphs/0')
 
-      result = @words_api.get_runs_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_runs_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -210,8 +210,8 @@ module AsposeWordsCloud
       request_font_dto = Font.new({:Bold => true})
       request = UpdateRunFontRequest.new(name: remote_file_name, paragraph_path: 'paragraphs/0', index: 0, font_dto: request_font_dto, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.update_run_font(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_run_font(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -222,8 +222,8 @@ module AsposeWordsCloud
       request_font_dto = Font.new({:Bold => true})
       request = UpdateRunFontOnlineRequest.new(document: request_document, paragraph_path: 'paragraphs/0', font_dto: request_font_dto, index: 0)
 
-      result = @words_api.update_run_font_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_run_font_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -237,8 +237,8 @@ module AsposeWordsCloud
       request_paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
       request = InsertParagraphRequest.new(name: remote_file_name, paragraph: request_paragraph, node_path: 'sections/0', folder: remote_data_folder)
 
-      result = @words_api.insert_paragraph(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_paragraph(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -249,8 +249,8 @@ module AsposeWordsCloud
       request_paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
       request = InsertParagraphOnlineRequest.new(document: request_document, paragraph: request_paragraph, node_path: 'sections/0')
 
-      result = @words_api.insert_paragraph_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_paragraph_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -264,8 +264,8 @@ module AsposeWordsCloud
       request_paragraph = ParagraphInsert.new({:Text => 'This is a new paragraph for your document'})
       request = InsertParagraphRequest.new(name: remote_file_name, paragraph: request_paragraph, folder: remote_data_folder)
 
-      result = @words_api.insert_paragraph(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_paragraph(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -278,8 +278,8 @@ module AsposeWordsCloud
 
       request = RenderParagraphRequest.new(name: remote_file_name, format: 'png', index: 0, node_path: '', folder: remote_data_folder)
 
-      result = @words_api.render_paragraph(request)
-      assert_equal false, result.nil?
+       result = @words_api.render_paragraph(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -289,8 +289,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = RenderParagraphOnlineRequest.new(document: request_document, format: 'png', index: 0, node_path: '')
 
-      result = @words_api.render_paragraph_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.render_paragraph_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -303,8 +303,8 @@ module AsposeWordsCloud
 
       request = RenderParagraphRequest.new(name: remote_file_name, format: 'png', index: 0, folder: remote_data_folder)
 
-      result = @words_api.render_paragraph(request)
-      assert_equal false, result.nil?
+       result = @words_api.render_paragraph(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -317,8 +317,8 @@ module AsposeWordsCloud
 
       request = GetParagraphFormatRequest.new(name: remote_file_name, index: 0, node_path: '', folder: remote_data_folder)
 
-      result = @words_api.get_paragraph_format(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_paragraph_format(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -328,8 +328,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetParagraphFormatOnlineRequest.new(document: request_document, index: 0, node_path: '')
 
-      result = @words_api.get_paragraph_format_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_paragraph_format_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -342,8 +342,8 @@ module AsposeWordsCloud
 
       request = GetParagraphFormatRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder)
 
-      result = @words_api.get_paragraph_format(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_paragraph_format(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -357,8 +357,8 @@ module AsposeWordsCloud
       request_paragraph_format_dto = ParagraphFormatUpdate.new({:Alignment => 'Right'})
       request = UpdateParagraphFormatRequest.new(name: remote_file_name, index: 0, paragraph_format_dto: request_paragraph_format_dto, node_path: '', folder: remote_data_folder)
 
-      result = @words_api.update_paragraph_format(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_paragraph_format(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -369,8 +369,8 @@ module AsposeWordsCloud
       request_paragraph_format_dto = ParagraphFormatUpdate.new({:Alignment => 'Right'})
       request = UpdateParagraphFormatOnlineRequest.new(document: request_document, paragraph_format_dto: request_paragraph_format_dto, index: 0, node_path: '')
 
-      result = @words_api.update_paragraph_format_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_paragraph_format_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -383,7 +383,7 @@ module AsposeWordsCloud
 
       request = DeleteParagraphRequest.new(name: remote_file_name, index: 0, node_path: '', folder: remote_data_folder)
 
-      @words_api.delete_paragraph(request)
+       @words_api.delete_paragraph(request)
     end
 
     #
@@ -393,8 +393,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = DeleteParagraphOnlineRequest.new(document: request_document, index: 0, node_path: '')
 
-      result = @words_api.delete_paragraph_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_paragraph_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -407,7 +407,7 @@ module AsposeWordsCloud
 
       request = DeleteParagraphRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder)
 
-      @words_api.delete_paragraph(request)
+       @words_api.delete_paragraph(request)
     end
 
     #
@@ -420,8 +420,8 @@ module AsposeWordsCloud
 
       request = GetParagraphListFormatRequest.new(name: remote_file_name, index: 0, node_path: '', folder: remote_data_folder)
 
-      result = @words_api.get_paragraph_list_format(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_paragraph_list_format(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -431,8 +431,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, list_folder + '/ParagraphGetListFormat.doc'))
       request = GetParagraphListFormatOnlineRequest.new(document: request_document, index: 0, node_path: '')
 
-      result = @words_api.get_paragraph_list_format_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_paragraph_list_format_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -445,8 +445,8 @@ module AsposeWordsCloud
 
       request = GetParagraphListFormatRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder)
 
-      result = @words_api.get_paragraph_list_format(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_paragraph_list_format(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -460,8 +460,8 @@ module AsposeWordsCloud
       request_list_format_dto = ListFormatUpdate.new({:ListId => 2})
       request = UpdateParagraphListFormatRequest.new(name: remote_file_name, index: 0, list_format_dto: request_list_format_dto, node_path: '', folder: remote_data_folder)
 
-      result = @words_api.update_paragraph_list_format(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_paragraph_list_format(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -472,8 +472,8 @@ module AsposeWordsCloud
       request_list_format_dto = ListFormatUpdate.new({:ListId => 2})
       request = UpdateParagraphListFormatOnlineRequest.new(document: request_document, list_format_dto: request_list_format_dto, index: 0, node_path: '')
 
-      result = @words_api.update_paragraph_list_format_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_paragraph_list_format_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -487,8 +487,8 @@ module AsposeWordsCloud
       request_list_format_dto = ListFormatUpdate.new({:ListId => 2})
       request = UpdateParagraphListFormatRequest.new(name: remote_file_name, index: 0, list_format_dto: request_list_format_dto, folder: remote_data_folder)
 
-      result = @words_api.update_paragraph_list_format(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_paragraph_list_format(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -501,8 +501,8 @@ module AsposeWordsCloud
 
       request = DeleteParagraphListFormatRequest.new(name: remote_file_name, index: 0, node_path: '', folder: remote_data_folder)
 
-      result = @words_api.delete_paragraph_list_format(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_paragraph_list_format(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -512,8 +512,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, list_folder + '/ParagraphDeleteListFormat.doc'))
       request = DeleteParagraphListFormatOnlineRequest.new(document: request_document, index: 0, node_path: '')
 
-      result = @words_api.delete_paragraph_list_format_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_paragraph_list_format_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -526,8 +526,8 @@ module AsposeWordsCloud
 
       request = DeleteParagraphListFormatRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder)
 
-      result = @words_api.delete_paragraph_list_format(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_paragraph_list_format(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -540,8 +540,8 @@ module AsposeWordsCloud
 
       request = GetParagraphTabStopsRequest.new(name: remote_file_name, index: 0, node_path: '', folder: remote_data_folder)
 
-      result = @words_api.get_paragraph_tab_stops(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_paragraph_tab_stops(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -551,8 +551,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, tab_stop_folder + '/ParagraphTabStops.docx'))
       request = GetParagraphTabStopsOnlineRequest.new(document: request_document, index: 0, node_path: '')
 
-      result = @words_api.get_paragraph_tab_stops_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_paragraph_tab_stops_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -565,8 +565,8 @@ module AsposeWordsCloud
 
       request = GetParagraphTabStopsRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder)
 
-      result = @words_api.get_paragraph_tab_stops(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_paragraph_tab_stops(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -580,8 +580,8 @@ module AsposeWordsCloud
       request_tab_stop_insert_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 100.0})
       request = InsertOrUpdateParagraphTabStopRequest.new(name: remote_file_name, index: 0, tab_stop_insert_dto: request_tab_stop_insert_dto, node_path: '', folder: remote_data_folder)
 
-      result = @words_api.insert_or_update_paragraph_tab_stop(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_or_update_paragraph_tab_stop(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -592,8 +592,8 @@ module AsposeWordsCloud
       request_tab_stop_insert_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 72})
       request = InsertOrUpdateParagraphTabStopOnlineRequest.new(document: request_document, tab_stop_insert_dto: request_tab_stop_insert_dto, index: 0, node_path: '')
 
-      result = @words_api.insert_or_update_paragraph_tab_stop_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_or_update_paragraph_tab_stop_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -607,8 +607,8 @@ module AsposeWordsCloud
       request_tab_stop_insert_dto = TabStopInsert.new({:Alignment => 'Left', :Leader => 'None', :Position => 100.0})
       request = InsertOrUpdateParagraphTabStopRequest.new(name: remote_file_name, index: 0, tab_stop_insert_dto: request_tab_stop_insert_dto, folder: remote_data_folder)
 
-      result = @words_api.insert_or_update_paragraph_tab_stop(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_or_update_paragraph_tab_stop(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -621,8 +621,8 @@ module AsposeWordsCloud
 
       request = DeleteAllParagraphTabStopsRequest.new(name: remote_file_name, index: 0, node_path: '', folder: remote_data_folder)
 
-      result = @words_api.delete_all_paragraph_tab_stops(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_all_paragraph_tab_stops(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -632,8 +632,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, tab_stop_folder + '/ParagraphTabStops.docx'))
       request = DeleteAllParagraphTabStopsOnlineRequest.new(document: request_document, index: 0, node_path: '')
 
-      result = @words_api.delete_all_paragraph_tab_stops_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_all_paragraph_tab_stops_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -646,8 +646,8 @@ module AsposeWordsCloud
 
       request = DeleteAllParagraphTabStopsRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder)
 
-      result = @words_api.delete_all_paragraph_tab_stops(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_all_paragraph_tab_stops(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -660,8 +660,8 @@ module AsposeWordsCloud
 
       request = DeleteParagraphTabStopRequest.new(name: remote_file_name, position: 72.0, index: 0, node_path: '', folder: remote_data_folder)
 
-      result = @words_api.delete_paragraph_tab_stop(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_paragraph_tab_stop(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -671,8 +671,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, tab_stop_folder + '/ParagraphTabStops.docx'))
       request = DeleteParagraphTabStopOnlineRequest.new(document: request_document, position: 72.0, index: 0, node_path: '')
 
-      result = @words_api.delete_paragraph_tab_stop_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_paragraph_tab_stop_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -685,8 +685,8 @@ module AsposeWordsCloud
 
       request = DeleteParagraphTabStopRequest.new(name: remote_file_name, position: 72.0, index: 0, folder: remote_data_folder)
 
-      result = @words_api.delete_paragraph_tab_stop(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_paragraph_tab_stop(request)
+       assert_equal false, result.nil?
     end
   end
 end

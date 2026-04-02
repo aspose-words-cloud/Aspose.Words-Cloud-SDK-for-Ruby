@@ -52,8 +52,27 @@ module AsposeWordsCloud
       request_document_list = DocumentEntryList.new({:DocumentEntries => request_document_list_document_entries})
       request = AppendDocumentRequest.new(name: remote_file_name, document_list: request_document_list, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.append_document(request)
-      assert_equal false, result.nil?
+       result = @words_api.append_document(request)
+       assert_equal false, result.nil?
+    end
+
+    #
+    # Test for appending document job.
+    #
+    def test_append_document_job
+      remote_file_name = 'TestAppendDocument.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request_document_list_document_entries0_file_reference = AsposeWordsCloud::FileReference.fromRemoteFilePath(remote_data_folder + '/' + remote_file_name)
+      request_document_list_document_entries0 = DocumentEntry.new({:FileReference => request_document_list_document_entries0_file_reference, :ImportFormatMode => 'KeepSourceFormatting'})
+      request_document_list_document_entries = [request_document_list_document_entries0]
+      request_document_list = DocumentEntryList.new({:DocumentEntries => request_document_list_document_entries})
+      request = AppendDocumentJobRequest.new(name: remote_file_name, document_list: request_document_list, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
+
+      job_handler = @words_api.append_document_job(request)
+      assert_equal false, job_handler.nil?
+      result = job_handler.wait_result
     end
 
     #
@@ -68,8 +87,25 @@ module AsposeWordsCloud
       request_document_list = DocumentEntryList.new({:DocumentEntries => request_document_list_document_entries})
       request = AppendDocumentOnlineRequest.new(document: request_document, document_list: request_document_list)
 
-      result = @words_api.append_document_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.append_document_online(request)
+       assert_equal false, result.nil?
+    end
+
+    #
+    # Test for appending document online job.
+    #
+    def test_append_document_online_job
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request_document_list_document_entries0_file_referenceStream = File.open(File.join(local_test_folder, local_file))
+      request_document_list_document_entries0_file_reference = AsposeWordsCloud::FileReference.fromLocalFileContent(request_document_list_document_entries0_file_referenceStream)
+      request_document_list_document_entries0 = DocumentEntry.new({:FileReference => request_document_list_document_entries0_file_reference, :ImportFormatMode => 'KeepSourceFormatting'})
+      request_document_list_document_entries = [request_document_list_document_entries0]
+      request_document_list = DocumentEntryList.new({:DocumentEntries => request_document_list_document_entries})
+      request = AppendDocumentOnlineJobRequest.new(document: request_document, document_list: request_document_list)
+
+      job_handler = @words_api.append_document_online_job(request)
+      assert_equal false, job_handler.nil?
+    job_handler.wait_result
     end
   end
 end

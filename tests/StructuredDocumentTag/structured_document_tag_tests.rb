@@ -48,8 +48,8 @@ module AsposeWordsCloud
 
       request = GetStructuredDocumentTagsRequest.new(name: remote_file_name, node_path: 'sections/0/body/paragraphs/0', folder: remote_data_folder)
 
-      result = @words_api.get_structured_document_tags(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_structured_document_tags(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -59,8 +59,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetStructuredDocumentTagsOnlineRequest.new(document: request_document, node_path: 'sections/0/body/paragraphs/0')
 
-      result = @words_api.get_structured_document_tags_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_structured_document_tags_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -73,8 +73,8 @@ module AsposeWordsCloud
 
       request = GetStructuredDocumentTagRequest.new(name: remote_file_name, index: 0, node_path: 'sections/0/body/paragraphs/0', folder: remote_data_folder)
 
-      result = @words_api.get_structured_document_tag(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_structured_document_tag(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -84,8 +84,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetStructuredDocumentTagOnlineRequest.new(document: request_document, index: 0, node_path: 'sections/0/body/paragraphs/0')
 
-      result = @words_api.get_structured_document_tag_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_structured_document_tag_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -99,8 +99,8 @@ module AsposeWordsCloud
       request_structured_document_tag = StructuredDocumentTagInsert.new({:SdtType => 'ComboBox', :Level => 'Inline'})
       request = InsertStructuredDocumentTagRequest.new(name: remote_file_name, structured_document_tag: request_structured_document_tag, node_path: 'sections/0/body/paragraphs/0', folder: remote_data_folder)
 
-      result = @words_api.insert_structured_document_tag(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_structured_document_tag(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -111,8 +111,8 @@ module AsposeWordsCloud
       request_structured_document_tag = StructuredDocumentTagInsert.new({:SdtType => 'ComboBox', :Level => 'Inline'})
       request = InsertStructuredDocumentTagOnlineRequest.new(document: request_document, structured_document_tag: request_structured_document_tag, node_path: 'sections/0/body/paragraphs/0')
 
-      result = @words_api.insert_structured_document_tag_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_structured_document_tag_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -125,7 +125,7 @@ module AsposeWordsCloud
 
       request = DeleteStructuredDocumentTagRequest.new(name: remote_file_name, index: 0, node_path: 'sections/0/body/paragraphs/0', folder: remote_data_folder)
 
-      @words_api.delete_structured_document_tag(request)
+       @words_api.delete_structured_document_tag(request)
     end
 
     #
@@ -135,8 +135,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = DeleteStructuredDocumentTagOnlineRequest.new(document: request_document, index: 0, node_path: 'sections/0/body/paragraphs/0')
 
-      result = @words_api.delete_structured_document_tag_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_structured_document_tag_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -153,8 +153,8 @@ module AsposeWordsCloud
       request_structured_document_tag = StructuredDocumentTagUpdate.new({:ListItems => request_structured_document_tag_list_items})
       request = UpdateStructuredDocumentTagRequest.new(name: remote_file_name, index: 0, structured_document_tag: request_structured_document_tag, node_path: 'sections/0/body/paragraphs/0', folder: remote_data_folder)
 
-      result = @words_api.update_structured_document_tag(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_structured_document_tag(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -168,8 +168,8 @@ module AsposeWordsCloud
       request_structured_document_tag = StructuredDocumentTagUpdate.new({:ListItems => request_structured_document_tag_list_items})
       request = UpdateStructuredDocumentTagOnlineRequest.new(document: request_document, structured_document_tag: request_structured_document_tag, index: 0, node_path: 'sections/0/body/paragraphs/0')
 
-      result = @words_api.update_structured_document_tag_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_structured_document_tag_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

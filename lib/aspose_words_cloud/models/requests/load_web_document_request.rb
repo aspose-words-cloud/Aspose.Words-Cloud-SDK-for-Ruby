@@ -45,6 +45,10 @@ module AsposeWordsCloud
       self.storage = storage
     end
 
+    def get_original_request
+      self
+    end
+
     # Creating batch part from request
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'data' is set
@@ -153,6 +157,10 @@ module AsposeWordsCloud
     # Get response type
     def get_response_type
       'SaveResponse'
+    end
+
+    def deserialize_response(api_client, body, headers)
+      api_client.deserialize(body, headers, 'SaveResponse')
     end
   end
 end
