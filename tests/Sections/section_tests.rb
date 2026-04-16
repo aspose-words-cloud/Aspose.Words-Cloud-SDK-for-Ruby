@@ -48,8 +48,8 @@ module AsposeWordsCloud
 
       request = GetSectionRequest.new(name: remote_file_name, section_index: 0, folder: remote_data_folder)
 
-      result = @words_api.get_section(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_section(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -59,8 +59,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetSectionOnlineRequest.new(document: request_document, section_index: 0)
 
-      result = @words_api.get_section_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_section_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -73,8 +73,8 @@ module AsposeWordsCloud
 
       request = GetSectionsRequest.new(name: remote_file_name, folder: remote_data_folder)
 
-      result = @words_api.get_sections(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_sections(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -84,8 +84,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetSectionsOnlineRequest.new(document: request_document)
 
-      result = @words_api.get_sections_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_sections_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -98,7 +98,7 @@ module AsposeWordsCloud
 
       request = DeleteSectionRequest.new(name: remote_file_name, section_index: 0, folder: remote_data_folder)
 
-      @words_api.delete_section(request)
+       @words_api.delete_section(request)
     end
 
     #
@@ -108,8 +108,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = DeleteSectionOnlineRequest.new(document: request_document, section_index: 0)
 
-      result = @words_api.delete_section_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_section_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -122,7 +122,7 @@ module AsposeWordsCloud
 
       request = MergeWithNextRequest.new(name: remote_file_name, section_index: 0, folder: remote_data_folder)
 
-      @words_api.merge_with_next(request)
+       @words_api.merge_with_next(request)
     end
 
     #
@@ -132,8 +132,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, 'DocumentElements/Sections/Source.docx'))
       request = MergeWithNextOnlineRequest.new(document: request_document, section_index: 0)
 
-      result = @words_api.merge_with_next_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.merge_with_next_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -146,7 +146,7 @@ module AsposeWordsCloud
 
       request = InsertSectionRequest.new(name: remote_file_name, section_index: 0, folder: remote_data_folder)
 
-      @words_api.insert_section(request)
+       @words_api.insert_section(request)
     end
 
     #
@@ -156,8 +156,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = InsertSectionOnlineRequest.new(document: request_document, section_index: 0)
 
-      result = @words_api.insert_section_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_section_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -170,7 +170,7 @@ module AsposeWordsCloud
 
       request = LinkHeaderFootersToPreviousRequest.new(name: remote_file_name, section_index: 1, folder: remote_data_folder)
 
-      @words_api.link_header_footers_to_previous(request)
+       @words_api.link_header_footers_to_previous(request)
     end
   end
 end

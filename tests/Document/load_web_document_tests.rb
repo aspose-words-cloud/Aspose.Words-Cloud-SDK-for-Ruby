@@ -37,8 +37,8 @@ module AsposeWordsCloud
       request_data = LoadWebDocumentData.new({:LoadingDocumentUrl => 'http://google.com', :SaveOptions => request_data_save_options})
       request = LoadWebDocumentRequest.new(data: request_data)
 
-      result = @words_api.load_web_document(request)
-      assert_equal false, result.nil?
+       result = @words_api.load_web_document(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -49,8 +49,8 @@ module AsposeWordsCloud
       request_data = LoadWebDocumentData.new({:LoadingDocumentUrl => 'http://google.com', :SaveOptions => request_data_save_options})
       request = LoadWebDocumentOnlineRequest.new(data: request_data)
 
-      result = @words_api.load_web_document_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.load_web_document_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

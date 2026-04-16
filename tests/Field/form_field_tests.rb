@@ -49,8 +49,8 @@ module AsposeWordsCloud
       request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name', :TextInputFormat => ''})
       request = UpdateFormFieldRequest.new(name: remote_file_name, index: 0, form_field: request_form_field, node_path: 'sections/0', folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.update_form_field(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_form_field(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -61,8 +61,8 @@ module AsposeWordsCloud
       request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name', :TextInputFormat => ''})
       request = UpdateFormFieldOnlineRequest.new(document: request_document, form_field: request_form_field, index: 0, node_path: 'sections/0')
 
-      result = @words_api.update_form_field_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_form_field_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -76,8 +76,8 @@ module AsposeWordsCloud
       request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => 'No name', :TextInputFormat => ''})
       request = UpdateFormFieldRequest.new(name: remote_file_name, index: 0, form_field: request_form_field, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.update_form_field(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_form_field(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -90,8 +90,8 @@ module AsposeWordsCloud
 
       request = GetFormFieldRequest.new(name: remote_file_name, index: 0, node_path: 'sections/0', folder: remote_data_folder)
 
-      result = @words_api.get_form_field(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_form_field(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -101,8 +101,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, field_folder + '/FormFilled.docx'))
       request = GetFormFieldOnlineRequest.new(document: request_document, index: 0, node_path: 'sections/0')
 
-      result = @words_api.get_form_field_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_form_field_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -115,8 +115,8 @@ module AsposeWordsCloud
 
       request = GetFormFieldRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder)
 
-      result = @words_api.get_form_field(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_form_field(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -129,8 +129,8 @@ module AsposeWordsCloud
 
       request = GetFormFieldsRequest.new(name: remote_file_name, node_path: 'sections/0', folder: remote_data_folder)
 
-      result = @words_api.get_form_fields(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_form_fields(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -140,8 +140,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, field_folder + '/FormFilled.docx'))
       request = GetFormFieldsOnlineRequest.new(document: request_document, node_path: 'sections/0')
 
-      result = @words_api.get_form_fields_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_form_fields_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -154,8 +154,8 @@ module AsposeWordsCloud
 
       request = GetFormFieldsRequest.new(name: remote_file_name, folder: remote_data_folder)
 
-      result = @words_api.get_form_fields(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_form_fields(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -169,8 +169,8 @@ module AsposeWordsCloud
       request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => '123', :TextInputFormat => 'UPPERCASE'})
       request = InsertFormFieldRequest.new(name: remote_file_name, form_field: request_form_field, node_path: 'sections/0/paragraphs/0', folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.insert_form_field(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_form_field(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -181,8 +181,8 @@ module AsposeWordsCloud
       request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => '123', :TextInputFormat => 'UPPERCASE'})
       request = InsertFormFieldOnlineRequest.new(document: request_document, form_field: request_form_field, node_path: 'sections/0/paragraphs/0')
 
-      result = @words_api.insert_form_field_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_form_field_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -196,8 +196,8 @@ module AsposeWordsCloud
       request_form_field = FormFieldTextInput.new({:Name => 'FullName', :Enabled => true, :CalculateOnExit => true, :StatusText => '', :TextInputType => 'Regular', :TextInputDefault => '123', :TextInputFormat => 'UPPERCASE'})
       request = InsertFormFieldRequest.new(name: remote_file_name, form_field: request_form_field, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.insert_form_field(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_form_field(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -210,7 +210,7 @@ module AsposeWordsCloud
 
       request = DeleteFormFieldRequest.new(name: remote_file_name, index: 0, node_path: 'sections/0', folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      @words_api.delete_form_field(request)
+       @words_api.delete_form_field(request)
     end
 
     #
@@ -220,8 +220,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, field_folder + '/FormFilled.docx'))
       request = DeleteFormFieldOnlineRequest.new(document: request_document, index: 0, node_path: 'sections/0')
 
-      result = @words_api.delete_form_field_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_form_field_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -234,7 +234,7 @@ module AsposeWordsCloud
 
       request = DeleteFormFieldRequest.new(name: remote_file_name, index: 0, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      @words_api.delete_form_field(request)
+       @words_api.delete_form_field(request)
     end
   end
 end

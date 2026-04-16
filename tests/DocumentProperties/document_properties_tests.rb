@@ -48,8 +48,8 @@ module AsposeWordsCloud
 
       request = GetDocumentPropertiesRequest.new(name: remote_file_name, folder: remote_data_folder)
 
-      result = @words_api.get_document_properties(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_document_properties(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -59,8 +59,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetDocumentPropertiesOnlineRequest.new(document: request_document)
 
-      result = @words_api.get_document_properties_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_document_properties_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -73,8 +73,8 @@ module AsposeWordsCloud
 
       request = GetDocumentPropertyRequest.new(name: remote_file_name, property_name: 'Author', folder: remote_data_folder)
 
-      result = @words_api.get_document_property(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_document_property(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -84,8 +84,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetDocumentPropertyOnlineRequest.new(document: request_document, property_name: 'Author')
 
-      result = @words_api.get_document_property_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_document_property_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -98,7 +98,7 @@ module AsposeWordsCloud
 
       request = DeleteDocumentPropertyRequest.new(name: remote_file_name, property_name: 'testProp', folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      @words_api.delete_document_property(request)
+       @words_api.delete_document_property(request)
     end
 
     #
@@ -108,8 +108,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = DeleteDocumentPropertyOnlineRequest.new(document: request_document, property_name: 'testProp')
 
-      result = @words_api.delete_document_property_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_document_property_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -123,8 +123,8 @@ module AsposeWordsCloud
       request_property = DocumentPropertyCreateOrUpdate.new({:Value => 'Imran Anwar'})
       request = CreateOrUpdateDocumentPropertyRequest.new(name: remote_file_name, property_name: 'AsposeAuthor', property: request_property, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.create_or_update_document_property(request)
-      assert_equal false, result.nil?
+       result = @words_api.create_or_update_document_property(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -135,8 +135,8 @@ module AsposeWordsCloud
       request_property = DocumentPropertyCreateOrUpdate.new({:Value => 'Imran Anwar'})
       request = CreateOrUpdateDocumentPropertyOnlineRequest.new(document: request_document, property_name: 'AsposeAuthor', property: request_property)
 
-      result = @words_api.create_or_update_document_property_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.create_or_update_document_property_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

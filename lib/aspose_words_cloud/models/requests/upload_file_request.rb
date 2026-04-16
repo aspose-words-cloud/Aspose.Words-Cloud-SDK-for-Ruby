@@ -52,6 +52,10 @@ module AsposeWordsCloud
       self.storage_name = storage_name
     end
 
+    def get_original_request
+      self
+    end
+
     # Creating batch part from request
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'file_content' is set
@@ -166,6 +170,10 @@ module AsposeWordsCloud
     # Get response type
     def get_response_type
       'FilesUploadResult'
+    end
+
+    def deserialize_response(api_client, body, headers)
+      api_client.deserialize(body, headers, 'FilesUploadResult')
     end
   end
 end

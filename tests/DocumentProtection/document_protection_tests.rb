@@ -49,8 +49,8 @@ module AsposeWordsCloud
       request_protection_request = ProtectionRequestV2.new({:ProtectionPassword => '123', :ProtectionType => 'ReadOnly'})
       request = ProtectDocumentRequest.new(name: remote_file_name, protection_request: request_protection_request, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.protect_document(request)
-      assert_equal false, result.nil?
+       result = @words_api.protect_document(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -61,8 +61,8 @@ module AsposeWordsCloud
       request_protection_request = ProtectionRequestV2.new({:ProtectionPassword => '123', :ProtectionType => 'ReadOnly'})
       request = ProtectDocumentOnlineRequest.new(document: request_document, protection_request: request_protection_request)
 
-      result = @words_api.protect_document_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.protect_document_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -76,8 +76,8 @@ module AsposeWordsCloud
 
       request = GetDocumentProtectionRequest.new(name: remote_file_name, folder: remote_data_folder)
 
-      result = @words_api.get_document_protection(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_document_protection(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -87,8 +87,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetDocumentProtectionOnlineRequest.new(document: request_document)
 
-      result = @words_api.get_document_protection_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_document_protection_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -102,8 +102,8 @@ module AsposeWordsCloud
 
       request = UnprotectDocumentRequest.new(name: remote_file_name, folder: remote_data_folder)
 
-      result = @words_api.unprotect_document(request)
-      assert_equal false, result.nil?
+       result = @words_api.unprotect_document(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -115,8 +115,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file_path))
       request = UnprotectDocumentOnlineRequest.new(document: request_document)
 
-      result = @words_api.unprotect_document_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.unprotect_document_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

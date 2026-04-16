@@ -35,8 +35,8 @@ module AsposeWordsCloud
     def test_get_info
       request = GetInfoRequest.new()
 
-      result = @words_api.get_info(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_info(request)
+       assert_equal false, result.nil?
     end
   end
 end

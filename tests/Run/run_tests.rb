@@ -49,8 +49,8 @@ module AsposeWordsCloud
       request_run = RunUpdate.new({:Text => 'run with text'})
       request = UpdateRunRequest.new(name: remote_file_name, paragraph_path: 'paragraphs/1', index: 0, run: request_run, folder: remote_data_folder)
 
-      result = @words_api.update_run(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_run(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -61,8 +61,8 @@ module AsposeWordsCloud
       request_run = RunUpdate.new({:Text => 'run with text'})
       request = UpdateRunOnlineRequest.new(document: request_document, paragraph_path: 'paragraphs/1', run: request_run, index: 0)
 
-      result = @words_api.update_run_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_run_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -76,8 +76,8 @@ module AsposeWordsCloud
       request_run = RunInsert.new({:Text => 'run with text'})
       request = InsertRunRequest.new(name: remote_file_name, run: request_run, paragraph_path: 'paragraphs/1', folder: remote_data_folder)
 
-      result = @words_api.insert_run(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_run(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -88,8 +88,8 @@ module AsposeWordsCloud
       request_run = RunInsert.new({:Text => 'run with text'})
       request = InsertRunOnlineRequest.new(document: request_document, run: request_run, paragraph_path: 'paragraphs/1')
 
-      result = @words_api.insert_run_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_run_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -102,7 +102,7 @@ module AsposeWordsCloud
 
       request = DeleteRunRequest.new(name: remote_file_name, paragraph_path: 'paragraphs/1', index: 0, folder: remote_data_folder)
 
-      @words_api.delete_run(request)
+       @words_api.delete_run(request)
     end
 
     #
@@ -112,8 +112,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = DeleteRunOnlineRequest.new(document: request_document, paragraph_path: 'paragraphs/1', index: 0)
 
-      result = @words_api.delete_run_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.delete_run_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

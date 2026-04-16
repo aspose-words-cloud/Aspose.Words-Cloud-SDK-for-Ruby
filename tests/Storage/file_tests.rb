@@ -47,8 +47,8 @@ module AsposeWordsCloud
       request_file_content = File.open(File.join(local_test_folder, local_file))
       request = UploadFileRequest.new(file_content: request_file_content, path: remote_data_folder + '/' + remote_file_name)
 
-      result = @words_api.upload_file(request)
-      assert_equal false, result.nil?
+       result = @words_api.upload_file(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -61,7 +61,7 @@ module AsposeWordsCloud
 
       request = CopyFileRequest.new(dest_path: remote_data_folder + '/TestCopyFileDest.docx', src_path: remote_data_folder + '/' + remote_file_name)
 
-      @words_api.copy_file(request)
+       @words_api.copy_file(request)
     end
 
     #
@@ -74,7 +74,7 @@ module AsposeWordsCloud
 
       request = MoveFileRequest.new(dest_path: remote_test_out + '/TestMoveFileDest_' + generate_uuid + '.docx', src_path: remote_data_folder + '/' + remote_file_name)
 
-      @words_api.move_file(request)
+       @words_api.move_file(request)
     end
 
     #
@@ -87,7 +87,7 @@ module AsposeWordsCloud
 
       request = DeleteFileRequest.new(path: remote_data_folder + '/' + remote_file_name)
 
-      @words_api.delete_file(request)
+       @words_api.delete_file(request)
     end
 
     #
@@ -100,8 +100,8 @@ module AsposeWordsCloud
 
       request = DownloadFileRequest.new(path: remote_data_folder + '/' + remote_file_name)
 
-      result = @words_api.download_file(request)
-      assert_equal false, result.nil?
+       result = @words_api.download_file(request)
+       assert_equal false, result.nil?
     end
   end
 end

@@ -49,7 +49,7 @@ module AsposeWordsCloud
       request_options = OptimizationOptions.new({:MsWordVersion => 'Word2002'})
       request = OptimizeDocumentRequest.new(name: remote_file_name, options: request_options, folder: remote_data_folder)
 
-      @words_api.optimize_document(request)
+       @words_api.optimize_document(request)
     end
 
     #
@@ -60,8 +60,8 @@ module AsposeWordsCloud
       request_options = OptimizationOptions.new({:MsWordVersion => 'Word2002'})
       request = OptimizeDocumentOnlineRequest.new(document: request_document, options: request_options)
 
-      result = @words_api.optimize_document_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.optimize_document_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

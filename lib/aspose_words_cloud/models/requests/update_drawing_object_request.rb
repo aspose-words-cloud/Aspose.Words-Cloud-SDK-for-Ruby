@@ -105,6 +105,10 @@ module AsposeWordsCloud
       self.revision_date_time = revision_date_time
     end
 
+    def get_original_request
+      self
+    end
+
     # Creating batch part from request
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'name' is set
@@ -261,6 +265,10 @@ module AsposeWordsCloud
     # Get response type
     def get_response_type
       'DrawingObjectResponse'
+    end
+
+    def deserialize_response(api_client, body, headers)
+      api_client.deserialize(body, headers, 'DrawingObjectResponse')
     end
   end
 end

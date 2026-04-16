@@ -48,8 +48,23 @@ module AsposeWordsCloud
 
       request = SplitDocumentRequest.new(name: remote_file_name, format: 'text', folder: remote_data_folder, dest_file_name: remote_test_out + '/TestSplitDocument.text', from: 1, to: 2)
 
-      result = @words_api.split_document(request)
-      assert_equal false, result.nil?
+       result = @words_api.split_document(request)
+       assert_equal false, result.nil?
+    end
+
+    #
+    # Test for document splitting job.
+    #
+    def test_split_document_job
+      remote_file_name = 'TestSplitDocument.docx'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+
+      request = SplitDocumentJobRequest.new(name: remote_file_name, format: 'text', folder: remote_data_folder, dest_file_name: remote_test_out + '/TestSplitDocument.text', from: 1, to: 2)
+
+      job_handler = @words_api.split_document_job(request)
+      assert_equal false, job_handler.nil?
+      result = job_handler.wait_result
     end
 
     #
@@ -59,8 +74,20 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = SplitDocumentOnlineRequest.new(document: request_document, format: 'text', dest_file_name: remote_test_out + '/TestSplitDocument.text', from: 1, to: 2)
 
-      result = @words_api.split_document_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.split_document_online(request)
+       assert_equal false, result.nil?
+    end
+
+    #
+    # Test for document splitting online job.
+    #
+    def test_split_document_online_job
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request = SplitDocumentOnlineJobRequest.new(document: request_document, format: 'text', dest_file_name: remote_test_out + '/TestSplitDocument.text', from: 1, to: 2)
+
+      job_handler = @words_api.split_document_online_job(request)
+      assert_equal false, job_handler.nil?
+    job_handler.wait_result
     end
   end
 end

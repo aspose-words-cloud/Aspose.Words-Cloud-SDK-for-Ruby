@@ -29,6 +29,10 @@ module AsposeWordsCloud
   # Request model for get_public_key operation.
   #
   class GetPublicKeyRequest
+    def get_original_request
+      self
+    end
+
     # Creating batch part from request
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # resource path
@@ -112,6 +116,10 @@ module AsposeWordsCloud
     # Get response type
     def get_response_type
       'PublicKeyResponse'
+    end
+
+    def deserialize_response(api_client, body, headers)
+      api_client.deserialize(body, headers, 'PublicKeyResponse')
     end
   end
 end

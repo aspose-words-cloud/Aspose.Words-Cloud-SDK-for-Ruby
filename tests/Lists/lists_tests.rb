@@ -48,8 +48,8 @@ module AsposeWordsCloud
 
       request = GetListsRequest.new(name: remote_file_name, folder: remote_data_folder)
 
-      result = @words_api.get_lists(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_lists(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -59,8 +59,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetListsOnlineRequest.new(document: request_document)
 
-      result = @words_api.get_lists_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_lists_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -73,8 +73,8 @@ module AsposeWordsCloud
 
       request = GetListRequest.new(name: remote_file_name, list_id: 1, folder: remote_data_folder)
 
-      result = @words_api.get_list(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_list(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -84,8 +84,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetListOnlineRequest.new(document: request_document, list_id: 1)
 
-      result = @words_api.get_list_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_list_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -99,8 +99,8 @@ module AsposeWordsCloud
       request_list_update = ListUpdate.new({:IsRestartAtEachSection => true})
       request = UpdateListRequest.new(name: remote_file_name, list_id: 1, list_update: request_list_update, folder: remote_data_folder)
 
-      result = @words_api.update_list(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_list(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -111,8 +111,8 @@ module AsposeWordsCloud
       request_list_update = ListUpdate.new({:IsRestartAtEachSection => true})
       request = UpdateListOnlineRequest.new(document: request_document, list_id: 1, list_update: request_list_update)
 
-      result = @words_api.update_list_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_list_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -126,8 +126,8 @@ module AsposeWordsCloud
       request_list_update = ListLevelUpdate.new({:Alignment => 'Right'})
       request = UpdateListLevelRequest.new(name: remote_file_name, list_id: 1, list_level: 1, list_update: request_list_update, folder: remote_data_folder)
 
-      result = @words_api.update_list_level(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_list_level(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -138,8 +138,8 @@ module AsposeWordsCloud
       request_list_update = ListLevelUpdate.new({:Alignment => 'Right'})
       request = UpdateListLevelOnlineRequest.new(document: request_document, list_id: 1, list_update: request_list_update, list_level: 1)
 
-      result = @words_api.update_list_level_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.update_list_level_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -153,8 +153,8 @@ module AsposeWordsCloud
       request_list_insert = ListInsert.new({:Template => 'OutlineLegal'})
       request = InsertListRequest.new(name: remote_file_name, list_insert: request_list_insert, folder: remote_data_folder)
 
-      result = @words_api.insert_list(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_list(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -165,8 +165,8 @@ module AsposeWordsCloud
       request_list_insert = ListInsert.new({:Template => 'OutlineLegal'})
       request = InsertListOnlineRequest.new(document: request_document, list_insert: request_list_insert)
 
-      result = @words_api.insert_list_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.insert_list_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

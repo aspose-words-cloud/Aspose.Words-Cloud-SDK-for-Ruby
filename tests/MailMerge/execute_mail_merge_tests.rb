@@ -49,8 +49,24 @@ module AsposeWordsCloud
       request_data = File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_data_file))
       request = ExecuteMailMergeOnlineRequest.new(template: request_template, data: request_data, with_regions: true)
 
-      result = @words_api.execute_mail_merge_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.execute_mail_merge_online(request)
+       assert_equal false, result.nil?
+    end
+
+    #
+    # Test for executing mail merge online job.
+    #
+    def test_execute_mail_merge_online_job
+      local_document_file = 'SampleExecuteTemplate.docx'
+      local_data_file = 'SampleExecuteTemplateData.txt'
+
+      request_template = File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_document_file))
+      request_data = File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_data_file))
+      request = ExecuteMailMergeOnlineJobRequest.new(template: request_template, data: request_data, with_regions: true)
+
+      job_handler = @words_api.execute_mail_merge_online_job(request)
+      assert_equal false, job_handler.nil?
+    job_handler.wait_result
     end
 
     #
@@ -65,8 +81,25 @@ module AsposeWordsCloud
 
       request = ExecuteMailMergeRequest.new(name: remote_file_name, data: local_data_file, folder: remote_data_folder, with_regions: true, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.execute_mail_merge(request)
-      assert_equal false, result.nil?
+       result = @words_api.execute_mail_merge(request)
+       assert_equal false, result.nil?
+    end
+
+    #
+    # Test for executing mail merge job.
+    #
+    def test_execute_mail_merge_job
+      local_document_file = 'SampleExecuteTemplate.docx'
+      remote_file_name = 'TestExecuteMailMerge.docx'
+      local_data_file = File.read(File.join(local_test_folder, mail_merge_folder + '/SampleMailMergeTemplateData.txt'))
+
+      upload_file File.join(local_test_folder, mail_merge_folder + '/' + local_document_file), remote_data_folder + '/' + remote_file_name
+
+      request = ExecuteMailMergeJobRequest.new(name: remote_file_name, data: local_data_file, folder: remote_data_folder, with_regions: true, dest_file_name: remote_test_out + '/' + remote_file_name)
+
+      job_handler = @words_api.execute_mail_merge_job(request)
+      assert_equal false, job_handler.nil?
+      result = job_handler.wait_result
     end
   end
 end

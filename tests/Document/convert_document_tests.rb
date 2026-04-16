@@ -50,8 +50,8 @@ module AsposeWordsCloud
       request_save_options_data = PdfSaveOptionsData.new({:FileName => remote_test_out + '/TestSaveAs.pdf'})
       request = SaveAsRequest.new(name: remote_name, save_options_data: request_save_options_data, folder: remote_folder)
 
-      result = @words_api.save_as(request)
-      assert_equal false, result.nil?
+       result = @words_api.save_as(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -64,8 +64,8 @@ module AsposeWordsCloud
       request_save_options_data = PdfSaveOptionsData.new({:FileName => remote_test_out + '/TestSaveAs.pdf'})
       request = SaveAsOnlineRequest.new(document: request_document, save_options_data: request_save_options_data)
 
-      result = @words_api.save_as_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.save_as_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -78,8 +78,8 @@ module AsposeWordsCloud
       request_save_options_data = HtmlSaveOptionsData.new({:FileName => remote_test_out + '/TestSaveAsHtml.html', :CssStyleSheetType => 'External', :CssStyleSheetFileName => remote_test_out + '/TestSaveAsHtml.css'})
       request = SaveAsOnlineRequest.new(document: request_document, save_options_data: request_save_options_data)
 
-      result = @words_api.save_as_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.save_as_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -94,8 +94,8 @@ module AsposeWordsCloud
       request_save_options_data = DocxSaveOptionsData.new({:FileName => remote_test_out + '/TestSaveAsFromPdfToDoc.docx'})
       request = SaveAsRequest.new(name: remote_name, save_options_data: request_save_options_data, folder: remote_folder)
 
-      result = @words_api.save_as(request)
-      assert_equal false, result.nil?
+       result = @words_api.save_as(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -110,8 +110,8 @@ module AsposeWordsCloud
       request_save_options = TiffSaveOptionsData.new({:FileName => remote_test_out + '/abc.tiff'})
       request = SaveAsTiffRequest.new(name: remote_name, save_options: request_save_options, folder: remote_folder)
 
-      result = @words_api.save_as_tiff(request)
-      assert_equal false, result.nil?
+       result = @words_api.save_as_tiff(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -124,8 +124,8 @@ module AsposeWordsCloud
       request_save_options = TiffSaveOptionsData.new({:FileName => remote_test_out + '/abc.tiff'})
       request = SaveAsTiffOnlineRequest.new(document: request_document, save_options: request_save_options)
 
-      result = @words_api.save_as_tiff_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.save_as_tiff_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -135,8 +135,20 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_folder + '/test_uploadfile.docx'))
       request = ConvertDocumentRequest.new(document: request_document, format: 'pdf')
 
-      result = @words_api.convert_document(request)
-      assert_equal false, result.nil?
+       result = @words_api.convert_document(request)
+       assert_equal false, result.nil?
+    end
+
+    #
+    # A test for ConvertDocument as a job.
+    #
+    def test_convert_document_job
+      request_document = File.open(File.join(local_test_folder, local_folder + '/test_uploadfile.docx'))
+      request = ConvertDocumentJobRequest.new(document: request_document, format: 'pdf')
+
+      job_handler = @words_api.convert_document_job(request)
+      assert_equal false, job_handler.nil?
+    job_handler.wait_result
     end
   end
 end
