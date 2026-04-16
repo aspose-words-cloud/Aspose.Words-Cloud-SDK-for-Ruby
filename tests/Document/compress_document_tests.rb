@@ -50,8 +50,8 @@ module AsposeWordsCloud
       request_compress_options = CompressOptions.new({})
       request = CompressDocumentRequest.new(name: remote_name, compress_options: request_compress_options, folder: remote_folder)
 
-      result = @words_api.compress_document(request)
-      assert_equal false, result.nil?
+       result = @words_api.compress_document(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -64,8 +64,8 @@ module AsposeWordsCloud
       request_compress_options = CompressOptions.new({})
       request = CompressDocumentOnlineRequest.new(document: request_document, compress_options: request_compress_options)
 
-      result = @words_api.compress_document_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.compress_document_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

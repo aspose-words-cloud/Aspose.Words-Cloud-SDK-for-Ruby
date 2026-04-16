@@ -48,8 +48,8 @@ module AsposeWordsCloud
 
       request = GetDocumentRequest.new(document_name: remote_file_name, folder: remote_data_folder)
 
-      result = @words_api.get_document(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_document(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -60,8 +60,8 @@ module AsposeWordsCloud
 
       request = CreateDocumentRequest.new(file_name: remote_file_name, folder: remote_data_folder)
 
-      result = @words_api.create_document(request)
-      assert_equal false, result.nil?
+       result = @words_api.create_document(request)
+       assert_equal false, result.nil?
     end
   end
 end

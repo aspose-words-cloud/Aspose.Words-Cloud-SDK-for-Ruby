@@ -46,8 +46,8 @@ module AsposeWordsCloud
       request_replace_text = ReplaceTextParameters.new({:OldValue => 'Testing', :NewValue => 'Aspose testing', :IsMatchCase => true, :IsMatchWholeWord => false, :IsOldValueRegex => false})
       request = ReplaceTextRequest.new(name: remote_file_name, replace_text: request_replace_text, folder: remote_data_folder, dest_file_name: remote_test_out + '/' + remote_file_name)
 
-      result = @words_api.replace_text(request)
-      assert_equal false, result.nil?
+       result = @words_api.replace_text(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -60,8 +60,8 @@ module AsposeWordsCloud
       request_replace_text = ReplaceTextParameters.new({:OldValue => 'aspose', :NewValue => 'aspose new', :IsMatchCase => true, :IsMatchWholeWord => false, :IsOldValueRegex => false})
       request = ReplaceTextOnlineRequest.new(document: request_document, replace_text: request_replace_text)
 
-      result = @words_api.replace_text_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.replace_text_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -75,8 +75,8 @@ module AsposeWordsCloud
 
       request = SearchRequest.new(name: remote_file_name, pattern: 'aspose', folder: remote_data_folder)
 
-      result = @words_api.search(request)
-      assert_equal false, result.nil?
+       result = @words_api.search(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -88,8 +88,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = SearchOnlineRequest.new(document: request_document, pattern: 'aspose')
 
-      result = @words_api.search_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.search_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

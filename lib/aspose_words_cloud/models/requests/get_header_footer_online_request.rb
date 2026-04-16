@@ -70,6 +70,10 @@ module AsposeWordsCloud
       self.filter_by_type = filter_by_type
     end
 
+    def get_original_request
+      self
+    end
+
     # Creating batch part from request
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'document' is set
@@ -192,6 +196,10 @@ module AsposeWordsCloud
     # Get response type
     def get_response_type
       'HeaderFooterResponse'
+    end
+
+    def deserialize_response(api_client, body, headers)
+      api_client.deserialize(body, headers, 'HeaderFooterResponse')
     end
   end
 end

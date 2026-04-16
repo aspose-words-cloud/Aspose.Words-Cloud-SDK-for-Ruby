@@ -55,6 +55,10 @@ module AsposeWordsCloud
       self.dest_storage_name = dest_storage_name
     end
 
+    def get_original_request
+      self
+    end
+
     # Creating batch part from request
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'dest_path' is set
@@ -155,6 +159,10 @@ module AsposeWordsCloud
 
     # Get response type
     def get_response_type
+      nil
+    end
+
+    def deserialize_response(api_client, body, headers)
       nil
     end
   end

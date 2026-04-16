@@ -99,6 +99,8 @@ module AsposeWordsCloud
         data = deserialize_multipart(response.body, response.headers)
       elsif opts[:batch] == true
         data = deserialize_batch(response, opts[:request_map])
+      elsif opts[:return_raw] == true
+        data = response.body
       else
         data = deserialize(response.body, response.headers, opts[:return_type]) if opts[:return_type]
       end
@@ -287,6 +289,63 @@ module AsposeWordsCloud
       reader.ended? or raise Exception, 'Truncated multipart message'
 
       parts
+    end
+
+    def deserialize_multipart_array(body, headers)
+      parts = []
+      content_type = headers['content-type']
+      reader = MultipartParser::Reader.new(MultipartParser::Reader::extract_boundary_value(content_type))
+
+      reader.on_part do |part|
+        part_data = { data: "", headers: part.headers }
+        parts << part_data
+        part.on_data do |partial_data|
+          part_data[:data] << partial_data
+        end
+      end
+
+      reader.write body
+      reader.ended? or raise Exception, 'Truncated multipart message'
+
+      parts
+    end
+
+    def deserialize_job_info_part(part)
+      deserialize(part[:data], part[:headers], 'JobInfo')
+    end
+
+    def deserialize_http_response_part(request, part_data)
+      status_line_index = part_data.index("\r\n")
+      raise ApiError.new(code: 400, message: 'Failed to parse HTTP response part.', response_headers: {}, response_body: '') if status_line_index.nil?
+
+      status_line = part_data[0...status_line_index]
+      status_line_parts = status_line.split(' ', 3)
+      if status_line_parts.length < 3 || !status_line_parts[0].start_with?('HTTP/')
+        raise ApiError.new(code: 400, message: 'Failed to parse HTTP response part.', response_headers: {}, response_body: '')
+      end
+
+      status_code = status_line_parts[1].to_i
+      headers_end_index = part_data.index("\r\n\r\n")
+      response_headers = {}
+      response_body = ''
+
+      if headers_end_index.nil?
+        response_body = part_data[(status_line_index + 2)..-1] || ''
+      else
+        header_lines = part_data[(status_line_index + 2)...headers_end_index].split("\r\n")
+        header_lines.each do |header_line|
+          next unless header_line.include?(':')
+          key, value = header_line.split(':', 2)
+          response_headers[key.strip.downcase] = value.strip
+        end
+        response_body = part_data[(headers_end_index + 4)..-1] || ''
+      end
+
+      if status_code < 200 || status_code >= 300
+        raise ApiError.new(code: status_code, message: response_body, response_headers: response_headers, response_body: response_body)
+      end
+
+      request.deserialize_response(self, response_body, response_headers)
     end
 
     # Deserialize batch

@@ -47,8 +47,8 @@ module AsposeWordsCloud
       request_template = File.open(File.join(local_test_folder, mail_merge_folder + '/' + local_document_file))
       request = GetDocumentFieldNamesOnlineRequest.new(template: request_template, use_non_merge_fields: true)
 
-      result = @words_api.get_document_field_names_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_document_field_names_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -61,8 +61,8 @@ module AsposeWordsCloud
 
       request = GetDocumentFieldNamesRequest.new(name: remote_file_name, folder: remote_data_folder)
 
-      result = @words_api.get_document_field_names(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_document_field_names(request)
+       assert_equal false, result.nil?
     end
   end
 end

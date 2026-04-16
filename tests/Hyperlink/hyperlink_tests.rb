@@ -48,8 +48,8 @@ module AsposeWordsCloud
 
       request = GetDocumentHyperlinkByIndexRequest.new(name: remote_file_name, hyperlink_index: 0, folder: remote_data_folder)
 
-      result = @words_api.get_document_hyperlink_by_index(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_document_hyperlink_by_index(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -59,8 +59,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetDocumentHyperlinkByIndexOnlineRequest.new(document: request_document, hyperlink_index: 0)
 
-      result = @words_api.get_document_hyperlink_by_index_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_document_hyperlink_by_index_online(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -73,8 +73,8 @@ module AsposeWordsCloud
 
       request = GetDocumentHyperlinksRequest.new(name: remote_file_name, folder: remote_data_folder)
 
-      result = @words_api.get_document_hyperlinks(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_document_hyperlinks(request)
+       assert_equal false, result.nil?
     end
 
     #
@@ -84,8 +84,8 @@ module AsposeWordsCloud
       request_document = File.open(File.join(local_test_folder, local_file))
       request = GetDocumentHyperlinksOnlineRequest.new(document: request_document)
 
-      result = @words_api.get_document_hyperlinks_online(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_document_hyperlinks_online(request)
+       assert_equal false, result.nil?
     end
   end
 end

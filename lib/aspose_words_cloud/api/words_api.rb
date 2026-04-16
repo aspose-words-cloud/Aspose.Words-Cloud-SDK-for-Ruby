@@ -65,6 +65,36 @@ module AsposeWordsCloud
       [data, status_code, headers]
     end
 
+    def call_job_result(job_id)
+      begin
+        data, _status_code, _headers = call_job_result_with_http_info(job_id)
+      rescue ApiError => e
+        if e.code == 401
+          request_token
+          data, _status_code, _headers = call_job_result_with_http_info(job_id)
+        else
+          raise
+        end
+      end
+      data
+    end
+
+    private def call_job_result_with_http_info(job_id)
+        raise ArgumentError, 'Missing the required parameter job_id when calling call_job_result' if job_id.nil?
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.call_job_result ...' if @api_client.config.debugging
+        header_params = {}
+        query_params = { 'id' => job_id }
+            data, status_code, headers = @api_client.call_api(
+                                                            :GET,
+                                                            'words/job',
+                                                            header_params: header_params,
+                                                            query_params: query_params,
+                                                            body: nil,
+                                                            return_raw: true)
+            [@api_client.deserialize_multipart_array(data, headers), status_code, headers]
+    end
+
     # Accepts all the revisions in the document.
     # @param request AcceptAllRevisionsRequest
     # @return [RevisionsModificationResponse]
@@ -196,6 +226,48 @@ module AsposeWordsCloud
     end
 
     # Appends documents to the original document.
+    # @param request AppendDocumentJobRequest
+    # @return [JobHandler]
+    def append_document_job(request)
+        begin
+        data, _status_code, _headers = append_document_job_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = append_document_job_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Appends documents to the original document.
+    # @param request AppendDocumentJobRequest
+    # @return [Array<(JobHandler, Fixnum, Hash)>]
+    # JobHandler, response status code and response headers
+    private def append_document_job_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? AppendDocumentJobRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.append_document_job ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'JobInfo')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#append_document_job\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [JobHandler.new(self, request.get_original_request, data), status_code, headers]
+    end
+
+    # Appends documents to the original document.
     # @param request AppendDocumentOnlineRequest
     # @return [AppendDocumentOnlineResponse]
     def append_document_online(request)
@@ -239,6 +311,48 @@ module AsposeWordsCloud
         mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DocumentResponse')
         mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
+    end
+
+    # Appends documents to the original document.
+    # @param request AppendDocumentOnlineJobRequest
+    # @return [JobHandler]
+    def append_document_online_job(request)
+        begin
+        data, _status_code, _headers = append_document_online_job_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = append_document_online_job_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Appends documents to the original document.
+    # @param request AppendDocumentOnlineJobRequest
+    # @return [Array<(JobHandler, Fixnum, Hash)>]
+    # JobHandler, response status code and response headers
+    private def append_document_online_job_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? AppendDocumentOnlineJobRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.append_document_online_job ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'JobInfo')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#append_document_online_job\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [JobHandler.new(self, request.get_original_request, data), status_code, headers]
     end
 
     # Applies a style to the document node.
@@ -633,6 +747,48 @@ module AsposeWordsCloud
         end
 
         [data, status_code, headers]
+    end
+
+    # Converts a document on a local drive to the specified format.
+    # @param request ConvertDocumentJobRequest
+    # @return [JobHandler]
+    def convert_document_job(request)
+        begin
+        data, _status_code, _headers = convert_document_job_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = convert_document_job_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Converts a document on a local drive to the specified format.
+    # @param request ConvertDocumentJobRequest
+    # @return [Array<(JobHandler, Fixnum, Hash)>]
+    # JobHandler, response status code and response headers
+    private def convert_document_job_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? ConvertDocumentJobRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.convert_document_job ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'JobInfo')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#convert_document_job\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [JobHandler.new(self, request.get_original_request, data), status_code, headers]
     end
 
     # Copy file.
@@ -3738,6 +3894,48 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Executes a Mail Merge operation.
+    # @param request ExecuteMailMergeJobRequest
+    # @return [JobHandler]
+    def execute_mail_merge_job(request)
+        begin
+        data, _status_code, _headers = execute_mail_merge_job_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = execute_mail_merge_job_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Executes a Mail Merge operation.
+    # @param request ExecuteMailMergeJobRequest
+    # @return [Array<(JobHandler, Fixnum, Hash)>]
+    # JobHandler, response status code and response headers
+    private def execute_mail_merge_job_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? ExecuteMailMergeJobRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.execute_mail_merge_job ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'JobInfo')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#execute_mail_merge_job\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [JobHandler.new(self, request.get_original_request, data), status_code, headers]
+    end
+
     # Executes a Mail Merge operation online.
     # @param request ExecuteMailMergeOnlineRequest
     # @return [File]
@@ -3778,6 +3976,48 @@ module AsposeWordsCloud
         end
 
         [data, status_code, headers]
+    end
+
+    # Executes a Mail Merge operation online.
+    # @param request ExecuteMailMergeOnlineJobRequest
+    # @return [JobHandler]
+    def execute_mail_merge_online_job(request)
+        begin
+        data, _status_code, _headers = execute_mail_merge_online_job_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = execute_mail_merge_online_job_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Executes a Mail Merge operation online.
+    # @param request ExecuteMailMergeOnlineJobRequest
+    # @return [Array<(JobHandler, Fixnum, Hash)>]
+    # JobHandler, response status code and response headers
+    private def execute_mail_merge_online_job_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? ExecuteMailMergeOnlineJobRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.execute_mail_merge_online_job ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'JobInfo')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#execute_mail_merge_online_job\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [JobHandler.new(self, request.get_original_request, data), status_code, headers]
     end
 
     # Get all information about revisions.
@@ -12693,6 +12933,48 @@ module AsposeWordsCloud
     end
 
     # Splits a document into parts and saves them in the specified format.
+    # @param request SplitDocumentJobRequest
+    # @return [JobHandler]
+    def split_document_job(request)
+        begin
+        data, _status_code, _headers = split_document_job_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = split_document_job_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Splits a document into parts and saves them in the specified format.
+    # @param request SplitDocumentJobRequest
+    # @return [Array<(JobHandler, Fixnum, Hash)>]
+    # JobHandler, response status code and response headers
+    private def split_document_job_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? SplitDocumentJobRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.split_document_job ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'JobInfo')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#split_document_job\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [JobHandler.new(self, request.get_original_request, data), status_code, headers]
+    end
+
+    # Splits a document into parts and saves them in the specified format.
     # @param request SplitDocumentOnlineRequest
     # @return [SplitDocumentOnlineResponse]
     def split_document_online(request)
@@ -12736,6 +13018,48 @@ module AsposeWordsCloud
         mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'SplitDocumentResponse')
         mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
         [mp_data, status_code, headers]
+    end
+
+    # Splits a document into parts and saves them in the specified format.
+    # @param request SplitDocumentOnlineJobRequest
+    # @return [JobHandler]
+    def split_document_online_job(request)
+        begin
+        data, _status_code, _headers = split_document_online_job_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = split_document_online_job_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Splits a document into parts and saves them in the specified format.
+    # @param request SplitDocumentOnlineJobRequest
+    # @return [Array<(JobHandler, Fixnum, Hash)>]
+    # JobHandler, response status code and response headers
+    private def split_document_online_job_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? SplitDocumentOnlineJobRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.split_document_online_job ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'JobInfo')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#split_document_online_job\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [JobHandler.new(self, request.get_original_request, data), status_code, headers]
     end
 
     # Translate a node id to a node path.

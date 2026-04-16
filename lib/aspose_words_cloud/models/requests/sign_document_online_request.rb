@@ -75,6 +75,10 @@ module AsposeWordsCloud
       self.dest_file_name = dest_file_name
     end
 
+    def get_original_request
+      self
+    end
+
     # Creating batch part from request
     def to_batch_part(api_client, requestId, parentRequestId = nil)
       # verify the required parameter 'document' is set
@@ -203,6 +207,14 @@ module AsposeWordsCloud
     # Get response type
     def get_response_type
       'SignDocumentOnlineResponse'
+    end
+
+    def deserialize_response(api_client, body, headers)
+      mp_data = SignDocumentOnlineResponse.new()
+      multipart_data = api_client.deserialize_multipart(body, headers)
+      mp_data.model = multipart_data['Model'].nil? ? nil : api_client.deserialize(multipart_data['Model'][:data], multipart_data['Model'][:headers], 'SignatureCollectionResponse')
+      mp_data.document = multipart_data['Document'].nil? ? nil : api_client.parse_files_collection(multipart_data['Document'][:data], multipart_data['Document'][:headers])
+            mp_data
     end
   end
 end

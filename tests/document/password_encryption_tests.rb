@@ -44,8 +44,8 @@ module AsposeWordsCloud
     def test_get_public_key
       request = GetPublicKeyRequest.new()
 
-      result = @words_api.get_public_key(request)
-      assert_equal false, result.nil?
+       result = @words_api.get_public_key(request)
+       assert_equal false, result.nil?
     end
   end
 end
