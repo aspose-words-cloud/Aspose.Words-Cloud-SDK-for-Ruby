@@ -108,7 +108,7 @@ module AsposeWordsCloud
       @client_side_validation = true
       @debugging = false
       @logger = defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
-	  @timeout = 60
+      @timeout = 300
 
       yield(self) if block_given?
     end
