@@ -4,72 +4,11 @@ parameters {
 		string(name: 'apiUrl', defaultValue: 'https://api-qa.aspose.cloud', description: 'server url')
 		string(name: 'StartFromStage', defaultValue: '0', description: '0 based index of stage which will be started')				
 }
-node('words-linux') {         
-    try {		
-		stage('0:Merge master to testPackage'){	
-			checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git']]])
-			sh "git config user.email 'jenkins.aspose@gmail.com'"
-			sh "git config user.name 'jenkins'"
-
-			sh "git checkout --merge testPackage"
-			sh "git reset --hard origin/testPackage"
-			sh "git merge --no-ff --allow-unrelated-histories origin/release"
-			sh "git diff --name-status"			
-			sh 'git commit -am "Merged release branch to testPackage" || exit 0'
-			
-			withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
-				sh "git push https://$gitUsername:$gitPass@git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git testPackage"
-			}
-		}			                
-    } finally {                       
-        cleanWs()
-    }
-}
 
 stage('1:wait for publishing'){
 	timeout(time:1, unit:'DAYS') {
 		input message:'Ready for publishing to rubygems?'
 	}
-}
-
-
-def testGemLocally()
-{
-	try {	
-        stage('2:checkout again'){
-			checkout([$class: 'GitSCM', branches: [[name: '*/testPackage']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git']]])
-            withCredentials([usernamePassword(credentialsId: '6839cbe8-39fa-40c0-86ce-90706f0bae5d', passwordVariable: 'ClientSecret', usernameVariable: 'ClientId')]) {
-                sh 'mkdir -p Settings'
-                sh 'echo "{\\"ClientId\\": \\"$ClientId\\",\\"ClientSecret\\": \\"$ClientSecret\\", \\"BaseUrl\\": \\"$apiUrl\\"}" > Settings/servercreds.json'
-            }
-        }
-		
-	    stage('3:build gem and test'){
-			docker.image('ruby:2.7').inside('-u root'){
-				stage('upload to rubygems'){
-					sh "gem build aspose_words_cloud.gemspec"
-                    sh "gem install nokogiri -v 1.10.10"
-					sh "gem install ./aspose_words_cloud-${version}.gem"
-				}
-				
-				stage('test gem locally'){
-					sh "mkdir testReports"
-					sh "gem install bundler -v 2.0.2 && bundle install"
-					try{
-						sh 'rake test'
-					} finally{
-						junit 'testReports/report/*.xml'
-					}
-				}
-				
-				stage('clean-compiled'){
-					sh "rm -rf %s"
-				}
-			} 
-	    }     
-    } finally {                       
-        cleanWs()
-    }
 }
 
 def publishGem()
@@ -112,27 +51,6 @@ def publishGem()
         cleanWs()
     }
 }
-
-node('words-linux') {
-	   stage('Merge master to release'){
-			checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'LocalBranch', localBranch: "**"]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '361885ba-9425-4230-950e-0af201d90547', url: 'https://git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git']]])
-			sh "git config user.email 'jenkins.aspose@gmail.com'"
-			sh "git config user.name 'jenkins'"
-			sh "git checkout --merge release"
-			sh "git reset --hard origin/release"
-			sh "git merge --no-ff --allow-unrelated-histories origin/master"
-			sh "git diff --name-status"			
-			sh 'git commit -am "Merged master branch to release" || exit 0'
-			withCredentials([usernamePassword(credentialsId: '361885ba-9425-4230-950e-0af201d90547', passwordVariable: 'gitPass', usernameVariable: 'gitUsername')]) {
-				sh "git push https://$gitUsername:$gitPass@git.auckland.dynabic.com/words-cloud/words-cloud-ruby.git release"
-			}
-		
-	}
-	try {
-		testGemLocally()
-	} finally {
-		cleanWs()
-	}
 	
 	try {
 		publishGem()
