@@ -52,9 +52,9 @@ def publishGem()
         cleanWs()
     }
 }
-	
-	try {
-		publishGem()
-	} finally {
-		cleanWs()
-	}
+
+node('words-linux') {
+stage('2:release') {
+	publishGem()
+}
+}
