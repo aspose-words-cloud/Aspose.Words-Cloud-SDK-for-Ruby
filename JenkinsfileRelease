@@ -19,7 +19,13 @@ def publishGem()
 		}			
 		    
 	    stage('5:build gem publish'){	
+			// Root is needed so gem/bundler can write to the image's own gem dir, but it leaves
+			// root-owned files in the mounted workspace that cleanWs() cannot delete. Capture the
+			// agent's ids here and hand ownership back before leaving the container.
+			def agentUid = sh(script: 'id -u', returnStdout: true).trim()
+			def agentGid = sh(script: 'id -g', returnStdout: true).trim()
 			docker.image('ruby:2.7').inside('-u root'){
+				try {
 				stage('upload to rubygems'){
 					sh "gem build aspose_words_cloud.gemspec"
 					sh "mkdir ~/.gem"
@@ -33,6 +39,9 @@ def publishGem()
 				
 				stage('clean-compiled'){
 					sh "rm -rf %s"
+				}
+				} finally {
+					sh "chown -R ${agentUid}:${agentGid} ."
 				}
 			}
 	    }
