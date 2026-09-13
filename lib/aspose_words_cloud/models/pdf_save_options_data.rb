@@ -168,6 +168,15 @@ module AsposeWordsCloud
     # Gets or sets the font embedding mode.
     attr_accessor :font_embedding_mode
 
+    # Gets or sets a value determining  whether to generate scripts that emulate specific Microsoft Word form field behavior in PDF.
+    # Default is false.
+    # When this option is enabled, the exporter generates PDF JavaScript actions to emulate Microsoft Word
+    # form field behavior, such as date and time form fields with formatting and validation rules.When set to true, supported behavior will be exported as PDF JavaScript actions.
+    # When set to false, no form field scripts will be generated.Script execution depends on the PDF viewer. Some PDF viewers might ignore scripts, restrict script execution,
+    # or require the user to enable JavaScript.JavaScript actions are prohibited by PDF/A-1, PDF/A-2 and PDF/A-3 compliance.
+    # The false value will be used automatically in this case.
+    attr_accessor :generate_form_field_scripts
+
     # Gets or sets the option that controls how bookmarks in headers/footers are exported.
     # The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.
     attr_accessor :header_footer_bookmarks_export_mode
@@ -293,6 +302,7 @@ module AsposeWordsCloud
         :'export_document_structure' => :'ExportDocumentStructure',
         :'export_language_to_span_tag' => :'ExportLanguageToSpanTag',
         :'font_embedding_mode' => :'FontEmbeddingMode',
+        :'generate_form_field_scripts' => :'GenerateFormFieldScripts',
         :'header_footer_bookmarks_export_mode' => :'HeaderFooterBookmarksExportMode',
         :'image_color_space_export_mode' => :'ImageColorSpaceExportMode',
         :'image_compression' => :'ImageCompression',
@@ -351,6 +361,7 @@ module AsposeWordsCloud
         :'export_document_structure' => :'BOOLEAN',
         :'export_language_to_span_tag' => :'BOOLEAN',
         :'font_embedding_mode' => :'String',
+        :'generate_form_field_scripts' => :'BOOLEAN',
         :'header_footer_bookmarks_export_mode' => :'String',
         :'image_color_space_export_mode' => :'String',
         :'image_compression' => :'String',
@@ -516,6 +527,10 @@ module AsposeWordsCloud
 
       if attributes.key?(:'FontEmbeddingMode')
         self.font_embedding_mode = attributes[:'FontEmbeddingMode']
+      end
+
+      if attributes.key?(:'GenerateFormFieldScripts')
+        self.generate_form_field_scripts = attributes[:'GenerateFormFieldScripts']
       end
 
       if attributes.key?(:'HeaderFooterBookmarksExportMode')
@@ -874,6 +889,7 @@ module AsposeWordsCloud
           export_document_structure == other.export_document_structure &&
           export_language_to_span_tag == other.export_language_to_span_tag &&
           font_embedding_mode == other.font_embedding_mode &&
+          generate_form_field_scripts == other.generate_form_field_scripts &&
           header_footer_bookmarks_export_mode == other.header_footer_bookmarks_export_mode &&
           image_color_space_export_mode == other.image_color_space_export_mode &&
           image_compression == other.image_compression &&
@@ -903,7 +919,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_ambiguous_text_font, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, attachments_embedding_mode, cache_background_graphics, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_attachments, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, render_choice_form_field_border, text_compression, use_book_fold_printing_settings, use_core_fonts, use_sdt_tag_as_form_field_name, zoom_behavior, zoom_factor, export_floating_shapes_as_inline_tag, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_ambiguous_text_font, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, attachments_embedding_mode, cache_background_graphics, compliance, create_note_hyperlinks, custom_properties_export, digital_signature_details, display_doc_title, downsample_options, embed_attachments, embed_full_fonts, encryption_details, export_document_structure, export_language_to_span_tag, font_embedding_mode, generate_form_field_scripts, header_footer_bookmarks_export_mode, image_color_space_export_mode, image_compression, interpolate_images, open_hyperlinks_in_new_window, outline_options, page_mode, preblend_images, preserve_form_fields, render_choice_form_field_border, text_compression, use_book_fold_printing_settings, use_core_fonts, use_sdt_tag_as_form_field_name, zoom_behavior, zoom_factor, export_floating_shapes_as_inline_tag, save_format].hash
     end
 
     # Builds the object from hash

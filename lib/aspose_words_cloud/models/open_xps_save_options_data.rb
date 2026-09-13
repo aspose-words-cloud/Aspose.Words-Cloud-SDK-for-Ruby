@@ -111,6 +111,10 @@ module AsposeWordsCloud
     # Gets or sets the level in the XPS document outline at which to display Word bookmarks.
     attr_accessor :bookmarks_outline_level
 
+    # Gets or sets a compression level used to save document.
+    # The default value is Normal.
+    attr_accessor :compression_level
+
     # Gets or sets the details for signing the output document.
     attr_accessor :digital_signature_details
 
@@ -172,6 +176,7 @@ module AsposeWordsCloud
         :'page_count' => :'PageCount',
         :'page_index' => :'PageIndex',
         :'bookmarks_outline_level' => :'BookmarksOutlineLevel',
+        :'compression_level' => :'CompressionLevel',
         :'digital_signature_details' => :'DigitalSignatureDetails',
         :'headings_outline_levels' => :'HeadingsOutlineLevels',
         :'outline_options' => :'OutlineOptions',
@@ -204,6 +209,7 @@ module AsposeWordsCloud
         :'page_count' => :'Integer',
         :'page_index' => :'Integer',
         :'bookmarks_outline_level' => :'Integer',
+        :'compression_level' => :'String',
         :'digital_signature_details' => :'DigitalSignatureDetails',
         :'headings_outline_levels' => :'Integer',
         :'outline_options' => :'OutlineOptionsData',
@@ -306,6 +312,10 @@ module AsposeWordsCloud
         self.bookmarks_outline_level = attributes[:'BookmarksOutlineLevel']
       end
 
+      if attributes.key?(:'CompressionLevel')
+        self.compression_level = attributes[:'CompressionLevel']
+      end
+
       if attributes.key?(:'DigitalSignatureDetails')
         self.digital_signature_details = attributes[:'DigitalSignatureDetails']
       end
@@ -338,6 +348,8 @@ module AsposeWordsCloud
       return false unless color_mode_validator.valid?(@color_mode)
       numeral_format_validator = EnumAttributeValidator.new('String', ["European", "ArabicIndic", "EasternArabicIndic", "Context", "System"])
       return false unless numeral_format_validator.valid?(@numeral_format)
+      compression_level_validator = EnumAttributeValidator.new('String', ["Normal", "Maximum", "Fast", "SuperFast"])
+      return false unless compression_level_validator.valid?(@compression_level)
 
       return true
     end
@@ -426,6 +438,20 @@ module AsposeWordsCloud
       end
     end
 
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] compression_level Object to be assigned
+    def compression_level=(compression_level)
+      validator = EnumAttributeValidator.new('String', ["Normal", "Maximum", "Fast", "SuperFast"])
+      if compression_level.to_i == 0
+        unless validator.valid?(compression_level)
+          raise ArgumentError, "invalid value for 'compression_level', must be one of #{validator.allowable_values}."
+        end
+        @compression_level = compression_level
+      else
+        @compression_level = validator.allowable_values[compression_level.to_i]
+      end
+    end
+
 
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
@@ -453,6 +479,7 @@ module AsposeWordsCloud
           page_count == other.page_count &&
           page_index == other.page_index &&
           bookmarks_outline_level == other.bookmarks_outline_level &&
+          compression_level == other.compression_level &&
           digital_signature_details == other.digital_signature_details &&
           headings_outline_levels == other.headings_outline_levels &&
           outline_options == other.outline_options &&
@@ -469,7 +496,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_ambiguous_text_font, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, bookmarks_outline_level, digital_signature_details, headings_outline_levels, outline_options, use_book_fold_printing_settings, save_format].hash
+      [allow_embedding_post_script_fonts, custom_time_zone_info_data, dml3_d_effects_rendering_mode, dml_effects_rendering_mode, dml_rendering_mode, file_name, iml_rendering_mode, update_ambiguous_text_font, update_created_time_property, update_fields, update_last_printed_property, update_last_saved_time_property, zip_output, color_mode, jpeg_quality, metafile_rendering_options, numeral_format, optimize_output, page_count, page_index, bookmarks_outline_level, compression_level, digital_signature_details, headings_outline_levels, outline_options, use_book_fold_printing_settings, save_format].hash
     end
 
     # Builds the object from hash
