@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------------
-# <copyright company="Aspose" file="compare_data.rb">
+# <copyright company="Aspose" file="advanced_compare_options.rb">
 #   Copyright (c) 2026 Aspose.Words for Cloud
 # </copyright>
 # <summary>
@@ -27,51 +27,34 @@ require 'date'
 
 module AsposeWordsCloud
 
-  # Container class for compare documents.
-  class CompareData
-    # Gets or sets advanced compare options that might help to produce more precise comparison output.
-    attr_accessor :advanced_options
+  # Allows to set advanced compare options.
+  class AdvancedCompareOptions
+    # Gets or sets the value indicating whether list definition contents are compared instead of list definition Ids.
+    # Default value is false.
+    attr_accessor :compare_list_definitions
 
-    # Gets or sets the initials of the author to use for revisions.
-    attr_accessor :author
+    # Gets or sets the value indicating whether to ignore difference in DrawingML unique Id.
+    # Default value is false.
+    attr_accessor :ignore_dml_unique_id
 
-    # Gets or sets the compare options.
-    attr_accessor :compare_options
-
-    # Gets or sets the path to document to compare at the server.
-    attr_accessor :comparing_with_document
-
-    # Gets or sets the date and time to use for revisions.
-    attr_accessor :date_time
-
-    # Gets or sets the file reference.
-    attr_accessor :file_reference
-
-    # Gets or sets the result document format.
-    attr_accessor :result_document_format
+    # Gets or sets the value indicating whether to ignore difference in StructuredDocumentTag store item Id.
+    # Default value is false.
+    attr_accessor :ignore_store_item_id
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'advanced_options' => :'AdvancedOptions',
-        :'author' => :'Author',
-        :'compare_options' => :'CompareOptions',
-        :'comparing_with_document' => :'ComparingWithDocument',
-        :'date_time' => :'DateTime',
-        :'file_reference' => :'FileReference',
-        :'result_document_format' => :'ResultDocumentFormat'
+        :'compare_list_definitions' => :'CompareListDefinitions',
+        :'ignore_dml_unique_id' => :'IgnoreDmlUniqueId',
+        :'ignore_store_item_id' => :'IgnoreStoreItemId'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'advanced_options' => :'AdvancedCompareOptions',
-        :'author' => :'String',
-        :'compare_options' => :'CompareOptions',
-        :'comparing_with_document' => :'String',
-        :'date_time' => :'DateTime',
-        :'file_reference' => :'FileReference',
-        :'result_document_format' => :'String'
+        :'compare_list_definitions' => :'BOOLEAN',
+        :'ignore_dml_unique_id' => :'BOOLEAN',
+        :'ignore_store_item_id' => :'BOOLEAN'
       }
     end
 
@@ -83,32 +66,16 @@ module AsposeWordsCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.key?(:'AdvancedOptions')
-        self.advanced_options = attributes[:'AdvancedOptions']
+      if attributes.key?(:'CompareListDefinitions')
+        self.compare_list_definitions = attributes[:'CompareListDefinitions']
       end
 
-      if attributes.key?(:'Author')
-        self.author = attributes[:'Author']
+      if attributes.key?(:'IgnoreDmlUniqueId')
+        self.ignore_dml_unique_id = attributes[:'IgnoreDmlUniqueId']
       end
 
-      if attributes.key?(:'CompareOptions')
-        self.compare_options = attributes[:'CompareOptions']
-      end
-
-      if attributes.key?(:'ComparingWithDocument')
-        self.comparing_with_document = attributes[:'ComparingWithDocument']
-      end
-
-      if attributes.key?(:'DateTime')
-        self.date_time = attributes[:'DateTime']
-      end
-
-      if attributes.key?(:'FileReference')
-        self.file_reference = attributes[:'FileReference']
-      end
-
-      if attributes.key?(:'ResultDocumentFormat')
-        self.result_document_format = attributes[:'ResultDocumentFormat']
+      if attributes.key?(:'IgnoreStoreItemId')
+        self.ignore_store_item_id = attributes[:'IgnoreStoreItemId']
       end
     end
 
@@ -123,13 +90,9 @@ module AsposeWordsCloud
     def ==(other)
       return true if self.equal?(other)
       self.class == other.class &&
-          advanced_options == other.advanced_options &&
-          author == other.author &&
-          compare_options == other.compare_options &&
-          comparing_with_document == other.comparing_with_document &&
-          date_time == other.date_time &&
-          file_reference == other.file_reference &&
-          result_document_format == other.result_document_format
+          compare_list_definitions == other.compare_list_definitions &&
+          ignore_dml_unique_id == other.ignore_dml_unique_id &&
+          ignore_store_item_id == other.ignore_store_item_id
     end
 
     # @see the `==` method
@@ -141,7 +104,7 @@ module AsposeWordsCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [advanced_options, author, compare_options, comparing_with_document, date_time, file_reference, result_document_format].hash
+      [compare_list_definitions, ignore_dml_unique_id, ignore_store_item_id].hash
     end
 
     # Builds the object from hash
@@ -255,26 +218,9 @@ module AsposeWordsCloud
     end
 
     def collectFilesContent(resultFilesContent)
-      if self.file_reference
-          self.file_reference.collectFilesContent(resultFilesContent)
-      end
-
-
     end
 
     def validate()
-      raise ArgumentError, 'Property author in CompareData is required.' if self.author.nil?
-      raise ArgumentError, 'Property file_reference in CompareData is required.' if self.file_reference.nil?
-      unless self.advanced_options.nil?
-          self.advanced_options.validate
-      end
-      unless self.compare_options.nil?
-          self.compare_options.validate
-      end
-      unless self.file_reference.nil?
-          self.file_reference.validate
-      end
-
     end
 
   end

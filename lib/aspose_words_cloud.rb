@@ -32,6 +32,7 @@ require_relative 'aspose_words_cloud/job_handler'
 
 # Models
 require_relative 'aspose_words_cloud/models/file_reference'
+require_relative 'aspose_words_cloud/models/advanced_compare_options'
 require_relative 'aspose_words_cloud/models/response_error'
 require_relative 'aspose_words_cloud/models/available_fonts_response'
 require_relative 'aspose_words_cloud/models/azw3_save_options_data'
