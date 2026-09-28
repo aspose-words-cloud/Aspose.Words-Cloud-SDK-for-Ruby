@@ -77,7 +77,7 @@ def runtests(dockerImageVersion)
     }
 }
 
-node('words-linux') {        	
+node('sdk-linux') {        	
 	stage('oldruby'){
 		try {
 			runtests("3.1") 
