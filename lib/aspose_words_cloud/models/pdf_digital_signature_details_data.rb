@@ -120,7 +120,7 @@ module AsposeWordsCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      hash_algorithm_validator = EnumAttributeValidator.new('String', ["Sha256", "Sha384", "Sha512", "RipeMD160"])
+      hash_algorithm_validator = EnumAttributeValidator.new('String', ["Sha256", "Sha384", "Sha512", "RipeMD160", "Auto"])
       return false unless hash_algorithm_validator.valid?(@hash_algorithm)
 
       return true
@@ -129,7 +129,7 @@ module AsposeWordsCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] hash_algorithm Object to be assigned
     def hash_algorithm=(hash_algorithm)
-      validator = EnumAttributeValidator.new('String', ["Sha256", "Sha384", "Sha512", "RipeMD160"])
+      validator = EnumAttributeValidator.new('String', ["Sha256", "Sha384", "Sha512", "RipeMD160", "Auto"])
       if hash_algorithm.to_i == 0
         unless validator.valid?(hash_algorithm)
           raise ArgumentError, "invalid value for 'hash_algorithm', must be one of #{validator.allowable_values}."
