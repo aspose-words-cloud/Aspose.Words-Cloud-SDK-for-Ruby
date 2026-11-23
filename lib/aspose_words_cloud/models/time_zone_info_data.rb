@@ -32,14 +32,18 @@ module AsposeWordsCloud
     # Gets or sets base utc offset in hh:mm:ss format.
     attr_accessor :base_utc_offset
 
+
     # Gets or sets display name.
     attr_accessor :display_name
+
 
     # Gets or sets an Id string for CustomTimeZoneInfo.
     attr_accessor :id
 
+
     # Gets or sets standard display name.
     attr_accessor :standard_display_name
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

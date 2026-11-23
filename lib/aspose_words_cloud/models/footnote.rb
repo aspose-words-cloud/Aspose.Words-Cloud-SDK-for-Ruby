@@ -32,26 +32,33 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the node id.
     attr_accessor :node_id
+
 
     # Gets or sets the link to comment range start node.
     attr_accessor :position
 
+
     # Gets or sets the value, that specifies whether this is a footnote or endnote.
-    attr_accessor :footnote_type
+    attr_reader :footnote_type
+
 
     # Gets or sets the custom reference mark to be used for this footnote.
     # The default value is Empty, meaning auto-numbered footnotes are used.
     # RTF-format can only store 1 symbol as custom reference mark, so upon export only the first symbol will be written others will be discard.
     attr_accessor :reference_mark
 
+
     # Gets or sets text of the footnote.
     # This method allows to quickly set text of a footnote from a string. The string can contain paragraph breaks, this will create paragraphs of text in the footnote accordingly.
     attr_accessor :text
 
+
     # Gets or sets the content of the footnote.
     attr_accessor :content
+
 
     class EnumAttributeValidator
       attr_reader :datatype

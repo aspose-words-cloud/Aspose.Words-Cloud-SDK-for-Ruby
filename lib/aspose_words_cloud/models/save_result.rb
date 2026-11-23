@@ -32,11 +32,14 @@ module AsposeWordsCloud
     # Gets or sets the link to destination document.
     attr_accessor :dest_document
 
+
     # Gets or sets the link to source document.
     attr_accessor :source_document
 
+
     # Gets or sets the list of links to additional items (css, images etc).
     attr_accessor :additional_items
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

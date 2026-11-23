@@ -31,6 +31,7 @@ module AsposeWordsCloud
   class StoryChildNodes
     # Gets or sets the list of child nodes.
     attr_accessor :child_nodes
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

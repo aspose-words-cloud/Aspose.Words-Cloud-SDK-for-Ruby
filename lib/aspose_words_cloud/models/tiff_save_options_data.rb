@@ -35,144 +35,182 @@ module AsposeWordsCloud
     # The default value is false.
     attr_accessor :allow_embedding_post_script_fonts
 
+
     # Gets or sets CustomTimeZoneInfo.
     attr_accessor :custom_time_zone_info_data
 
+
     # Gets or sets the value determining how 3D effects are rendered.
     # The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.
-    attr_accessor :dml3_d_effects_rendering_mode
+    attr_reader :dml3_d_effects_rendering_mode
+
 
     # Gets or sets the value determining how DrawingML effects are rendered.
     # { Simplified | None | Fine }.
     # The default value is Simplified.
     # This property is used when the document is exported to fixed page formats.
-    attr_accessor :dml_effects_rendering_mode
+    attr_reader :dml_effects_rendering_mode
+
 
     # Gets or sets the option that controls how DrawingML shapes are rendered.
     # { Fallback | DrawingML }. The default value is Fallback.
     # This property is used when the document is exported to fixed page formats.
-    attr_accessor :dml_rendering_mode
+    attr_reader :dml_rendering_mode
+
 
     # Gets or sets the name of destination file.
     attr_accessor :file_name
 
+
     # Gets or sets the value determining how ink (InkML) objects are rendered.
     # The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.
-    attr_accessor :iml_rendering_mode
+    attr_reader :iml_rendering_mode
+
 
     # Gets or sets a value indicating whether the font attributes will be changed according to the character code being used.
     attr_accessor :update_ambiguous_text_font
+
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
     # The default value is false.
     attr_accessor :update_created_time_property
 
+
     # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
     attr_accessor :update_fields
+
 
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
     attr_accessor :update_last_printed_property
 
+
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     # The default value is false.
     attr_accessor :update_last_saved_time_property
+
 
     # Gets or sets a value indicating whether to zip output or not.
     # The default value is false.
     # When set to true, output files will be zipped.
     attr_accessor :zip_output
 
+
     # Gets or sets the value determining how colors are rendered.
     # { Normal | Grayscale}.
     # The default value is Normal.
     # This property is used when the document is exported to fixed page formats.
-    attr_accessor :color_mode
+    attr_reader :color_mode
+
 
     # Gets or sets the quality of the JPEG images inside PDF document.
     attr_accessor :jpeg_quality
 
+
     # Gets or sets the metafile rendering options.
     attr_accessor :metafile_rendering_options
 
+
     # Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.
-    attr_accessor :numeral_format
+    attr_reader :numeral_format
+
 
     # Gets or sets a value indicating whether it is required to optimize output of XPS.
     # If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.
     # Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.
     attr_accessor :optimize_output
 
+
     # Gets or sets the number of pages to render.
     attr_accessor :page_count
 
+
     # Gets or sets the 0-based index of the first page to render.
     attr_accessor :page_index
+
 
     # Gets or sets the horizontal resolution in dots per inch for the generated images.
     # This property has effect only when saving to raster image formats.
     # The default value is 96.
     attr_accessor :horizontal_resolution
 
+
     # Gets or sets the brightness level of the image.
     attr_accessor :image_brightness
 
+
     # Gets or sets the color mode of the image.
-    attr_accessor :image_color_mode
+    attr_reader :image_color_mode
+
 
     # Gets or sets the contrast level of the image.
     attr_accessor :image_contrast
 
+
     # Gets or sets the background (paper) color of the image.
     attr_accessor :paper_color
 
+
     # Gets or sets the pixel format of the image.
-    attr_accessor :pixel_format
+    attr_reader :pixel_format
+
 
     # Gets or sets both horizontal and vertical resolution in dots per inch for the generated images.
     # This property has effect only when saving to raster image formats.
     # The default value is 96.
     attr_accessor :resolution
 
+
     # Gets or sets the zoom factor of the image.
     attr_accessor :scale
+
 
     # Gets or sets a value indicating whether to use anti-aliasing for rendering.
     attr_accessor :use_anti_aliasing
 
+
     # Gets or sets a value indicating whether to use high quality (i.e. slow) rendering algorithms.
     attr_accessor :use_high_quality_rendering
+
 
     # Gets or sets the vertical resolution in dots per inch for the generated images.
     # This property has effect only when saving to raster image formats.
     # The default value is 96.
     attr_accessor :vertical_resolution
 
+
     # Gets or sets the height of a generated image in pixels.
     # This property has effect only when saving to raster image formats
     # and used in pair with ImageWidth.
     attr_accessor :image_height
+
 
     # Gets or sets the width of a generated image in pixels.
     # This property has effect only when saving to raster image formats
     # and used in pair with ImageHeight.
     attr_accessor :image_width
 
+
     # Gets or sets a value indicating whether to use GDI+ or Aspose.Words metafile renderer when saving to EMF.
     # If set to true - GDI+ metafile renderer is used. I.e. content is written to GDI+ graphics object and saved to metafile.If set to false - Aspose.Words metafile renderer is used. I.e. content is written directly to the metafile format with Aspose.Words.The default value is true.Has effect only when saving to EMF.
     attr_accessor :use_gdi_emf_renderer
+
 
     # Gets or sets the threshold that determines the value of the binarization error in the Floyd-Steinberg method. when ImageBinarizationMethod is ImageBinarizationMethod.FloydSteinbergDithering.
     # The default value is 128.
     attr_accessor :threshold_for_floyd_steinberg_dithering
 
+
     # Gets or sets the method used while converting images to 1 bpp format.
-    attr_accessor :tiff_binarization_method
+    attr_reader :tiff_binarization_method
+
 
     # Gets or sets the type of compression.
-    attr_accessor :tiff_compression
+    attr_reader :tiff_compression
+
 
     # Gets the format of save.
     attr_accessor :save_format
+
 
     class EnumAttributeValidator
       attr_reader :datatype

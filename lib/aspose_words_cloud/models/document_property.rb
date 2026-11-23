@@ -32,15 +32,19 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the name of the document property.
     attr_accessor :name
+
 
     # Gets or sets the value of the document property.
     attr_accessor :value
 
+
     # Gets or sets a value indicating whether the property is built-in or not.
     # If true the property is built-in, if false the property is custom.
     attr_accessor :built_in
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

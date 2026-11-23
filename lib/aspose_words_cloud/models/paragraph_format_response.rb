@@ -33,8 +33,10 @@ module AsposeWordsCloud
     # Gets or sets the request Id.
     attr_accessor :request_id
 
+
     # Gets or sets the formatting properties of a paragraph.
     attr_accessor :paragraph_format
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

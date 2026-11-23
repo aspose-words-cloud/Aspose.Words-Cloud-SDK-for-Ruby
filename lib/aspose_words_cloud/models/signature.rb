@@ -33,23 +33,30 @@ module AsposeWordsCloud
     # Gets or sets the signing purpose comment.
     attr_accessor :comments
 
+
     # Gets or sets the subject distinguished name of the certificate issuer.
     attr_accessor :issuer_name
+
 
     # Gets or sets a value indicating whether this digital signature is valid.
     attr_accessor :is_valid
 
+
     # Gets or sets the type of the digital signature.
     attr_accessor :signature_type
+
 
     # Gets or sets an array of bytes representing a signature value as base64 string.
     attr_accessor :signature_value
 
+
     # Gets or sets the time the document was signed.
     attr_accessor :sign_time
 
+
     # Gets or sets the subject distinguished name of the certificate that was used to sign the document.
     attr_accessor :subject_name
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

@@ -32,11 +32,14 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether to append all documents to the same section.
     attr_accessor :append_all_entries_to_one_section
 
+
     # Gets or sets a value indicating whether to apply headers and footers from base document to appending documents. The default value is true.
     attr_accessor :apply_base_document_headers_and_footers_to_appending_documents
 
+
     # Gets or sets the list of documents.
     attr_accessor :document_entries
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

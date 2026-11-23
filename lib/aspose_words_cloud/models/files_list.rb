@@ -31,6 +31,7 @@ module AsposeWordsCloud
   class FilesList
     # Files and folders contained by folder StorageFile.
     attr_accessor :value
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

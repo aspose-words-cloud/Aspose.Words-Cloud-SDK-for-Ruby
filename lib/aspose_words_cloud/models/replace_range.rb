@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the range's text.
     attr_accessor :text
 
+
     # Gets or sets the range's text type.
-    attr_accessor :text_type
+    attr_reader :text_type
+
 
     class EnumAttributeValidator
       attr_reader :datatype

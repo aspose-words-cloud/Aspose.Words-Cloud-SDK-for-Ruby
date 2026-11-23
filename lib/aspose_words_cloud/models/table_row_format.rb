@@ -32,17 +32,22 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the height of the table row in points.
     attr_accessor :height
 
+
     # Gets or sets the rule for determining the height of the table row.
-    attr_accessor :height_rule
+    attr_reader :height_rule
+
 
     # Gets or sets a value indicating whether the text in a table row is allowed to split across a page break.
     attr_accessor :allow_break_across_pages
 
+
     # Gets or sets a value indicating whether the row is repeated as a table heading on every page when the table spans more than one page.
     attr_accessor :heading_format
+
 
     class EnumAttributeValidator
       attr_reader :datatype

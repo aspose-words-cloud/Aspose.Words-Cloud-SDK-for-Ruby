@@ -33,8 +33,10 @@ module AsposeWordsCloud
     # Gets or sets the request Id.
     attr_accessor :request_id
 
+
     # Gets or sets the comment.
     attr_accessor :comment
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

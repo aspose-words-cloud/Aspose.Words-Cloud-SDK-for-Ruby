@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the request Id.
     attr_accessor :request_id
 
+
     # Gets or sets the StructuredDocumentTag.
     attr_accessor :structured_document_tag
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

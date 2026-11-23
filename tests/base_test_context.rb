@@ -25,11 +25,12 @@
 
 module AsposeWordsCloud
   require "minitest/autorun"
-  require "minitest/unit"
+  require "minitest/reporters"
+  Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new, Minitest::Reporters::JUnitReporter.new('testReports/report')]
   require 'securerandom'
   require_relative '../lib/aspose_words_cloud'
   class BaseTestContext < Minitest::Test
-    include MiniTest::Assertions
+    include Minitest::Assertions
     def setup
       creds = get_config()
       AsposeWordsCloud.configure do |config|

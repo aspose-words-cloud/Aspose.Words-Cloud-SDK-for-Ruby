@@ -36,6 +36,7 @@ module AsposeWordsCloud
     # The default value is false.
     attr_accessor :always_generate_root_object
 
+
     # Gets or sets exact formats for parsing JSON date-time values while loading JSON.
     # The default is null.
     # Strings encoded using Microsoft® JSON date-time format (for example, "/Date(1224043200000)/")
@@ -53,10 +54,12 @@ module AsposeWordsCloud
     # empty, no additional date-time formats are used.
     attr_accessor :exact_date_time_parse_formats
 
+
     # Gets or sets a mode for parsing JSON simple values (null, boolean, number, integer,
     # and string) while loading JSON. Such a mode does not affect parsing of date-time
     # values. The default is Aspose.Words.Reporting.JsonSimpleValueParseMode.Loose.
-    attr_accessor :simple_value_parse_mode
+    attr_reader :simple_value_parse_mode
+
 
     class EnumAttributeValidator
       attr_reader :datatype

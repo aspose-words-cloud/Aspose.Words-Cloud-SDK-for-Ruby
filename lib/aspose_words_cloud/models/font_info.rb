@@ -32,14 +32,18 @@ module AsposeWordsCloud
     # Gets or sets the path to the font file if any.
     attr_accessor :file_path
 
+
     # Gets or sets the family name of the font.
     attr_accessor :font_family_name
+
 
     # Gets or sets the full name of the font.
     attr_accessor :full_font_name
 
+
     # Gets or sets the version string of the font.
     attr_accessor :version
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

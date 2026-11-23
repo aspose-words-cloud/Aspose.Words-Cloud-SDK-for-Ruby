@@ -32,11 +32,14 @@ module AsposeWordsCloud
     # Gets or sets the file reference.
     attr_accessor :file_reference
 
+
     # Gets or sets document password encrypted on API public key. The default value is null (the document has no password).
     attr_accessor :encrypted_password
 
+
     # Gets or sets the option that controls formatting will be used: appended or destination document. Can be KeepSourceFormatting or UseDestinationStyles.
-    attr_accessor :import_format_mode
+    attr_reader :import_format_mode
+
 
     class EnumAttributeValidator
       attr_reader :datatype

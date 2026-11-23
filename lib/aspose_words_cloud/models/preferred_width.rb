@@ -30,10 +30,12 @@ module AsposeWordsCloud
   # DTO container with a preferred width value.
   class PreferredWidth
     # Gets or sets the unit of measure used for this preferred width value.
-    attr_accessor :type
+    attr_reader :type
+
 
     # Gets or sets the preferred width value. The unit of measure is specified in the Type property.
     attr_accessor :value
+
 
     class EnumAttributeValidator
       attr_reader :datatype

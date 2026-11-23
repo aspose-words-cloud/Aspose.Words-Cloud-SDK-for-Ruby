@@ -31,6 +31,7 @@ module AsposeWordsCloud
   class RangeDocument
     # Gets or sets the name for a new document.
     attr_accessor :document_name
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

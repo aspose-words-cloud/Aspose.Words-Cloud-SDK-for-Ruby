@@ -30,26 +30,32 @@ module AsposeWordsCloud
   # Container class for options of metafile rendering.
   class MetafileRenderingOptionsData
     # Gets or sets the option that controls how EMF+ Dual metafiles should be rendered.
-    attr_accessor :emf_plus_dual_rendering_mode
+    attr_reader :emf_plus_dual_rendering_mode
+
 
     # Gets or sets a value indicating whether the raster operations should be emulated.
     # Specific raster operations could be used in metafiles. They can not be rendered directly to vector graphics. Emulating raster operations requires partial rasterization of the resulting vector graphics which may affect the metafile rendering performance. When this value is set to true, Aspose.Words emulates the raster operations. The resulting output maybe partially rasterized and performance might be slower. When this value is set to false, Aspose.Words does not emulate the raster operations. When Aspose.Words encounters a raster operation in a metafile it fallbacks to rendering the metafile into a bitmap by using the operating system. This option is used only when metafile is rendered as vector graphics. The default value is true.
     attr_accessor :emulate_raster_operations
 
+
     # Gets or sets a value determining whether metafile rendering emulates the display of the metafile according to the size on page
     # or the display of the metafile in its default size.
     attr_accessor :emulate_rendering_to_size_on_page
+
 
     # Gets or sets the resolution in pixels per inch for the emulation of metafile rendering to the size on page.
     # This option is used only when EmulateRenderingToSizeOnPage is set to true.The default value is 96. This is a default display resolution. I.e. metafile rendering will emulate the display of
     # the metafile in MS Word with a 100% zoom factor.
     attr_accessor :emulate_rendering_to_size_on_page_resolution
 
+
     # Gets or sets the option that controls how metafile images should be rendered.
-    attr_accessor :rendering_mode
+    attr_reader :rendering_mode
+
 
     # Gets or sets the flag, that controls how WMF metafiles with embedded EMF metafiles should be rendered.
     attr_accessor :use_emf_embedded_to_wmf
+
 
     class EnumAttributeValidator
       attr_reader :datatype

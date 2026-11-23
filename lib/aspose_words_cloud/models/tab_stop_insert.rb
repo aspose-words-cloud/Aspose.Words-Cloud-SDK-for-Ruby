@@ -30,13 +30,16 @@ module AsposeWordsCloud
   # A DTO to Insert / replace a tab stop.
   class TabStopInsert
     # Gets or sets the alignment of text at this tab stop.
-    attr_accessor :alignment
+    attr_reader :alignment
+
 
     # Gets or sets the type of the leader line displayed under the tab character.
-    attr_accessor :leader
+    attr_reader :leader
+
 
     # Gets or sets the position of the tab stop in points.
     attr_accessor :position
+
 
     class EnumAttributeValidator
       attr_reader :datatype

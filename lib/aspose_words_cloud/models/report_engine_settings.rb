@@ -32,20 +32,26 @@ module AsposeWordsCloud
     # Gets or sets the options for parsing CSV data.
     attr_accessor :csv_data_load_options
 
+
     # Gets or sets the name to reference the data source object in the template.
     attr_accessor :data_source_name
 
+
     # Gets or sets type of datasource.
-    attr_accessor :data_source_type
+    attr_reader :data_source_type
+
 
     # Gets or sets the options for parsing JSON data.
     attr_accessor :json_data_load_options
 
+
     # Gets or sets type of options to build report.
     attr_accessor :report_build_options
 
+
     # Gets or sets the options for parsing XML data.
     attr_accessor :xml_data_load_options
+
 
     class EnumAttributeValidator
       attr_reader :datatype

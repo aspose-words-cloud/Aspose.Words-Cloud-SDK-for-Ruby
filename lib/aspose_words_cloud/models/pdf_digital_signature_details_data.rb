@@ -32,17 +32,22 @@ module AsposeWordsCloud
     # Gets or sets the certificate's filename using for signing.
     attr_accessor :certificate_filename
 
+
     # Gets or sets the hash algorithm.
-    attr_accessor :hash_algorithm
+    attr_reader :hash_algorithm
+
 
     # Gets or sets the location of the signing.
     attr_accessor :location
 
+
     # Gets or sets the reason for the signing.
     attr_accessor :reason
 
+
     # Gets or sets the date of the signing.
     attr_accessor :signature_date
+
 
     class EnumAttributeValidator
       attr_reader :datatype

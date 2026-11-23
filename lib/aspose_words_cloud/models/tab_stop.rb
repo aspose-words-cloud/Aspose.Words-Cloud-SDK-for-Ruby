@@ -30,16 +30,20 @@ module AsposeWordsCloud
   # DTO container with paragraph format tab stop.
   class TabStop
     # Gets or sets the alignment of text at this tab stop.
-    attr_accessor :alignment
+    attr_reader :alignment
+
 
     # Gets or sets the type of the leader line displayed under the tab character.
-    attr_accessor :leader
+    attr_reader :leader
+
 
     # Gets or sets the position of the tab stop in points.
     attr_accessor :position
 
+
     # Gets or sets a value indicating whether this tab stop clears any existing tab stops in this position.
     attr_accessor :is_clear
+
 
     class EnumAttributeValidator
       attr_reader :datatype

@@ -35,84 +35,106 @@ module AsposeWordsCloud
     # The default value is false.
     attr_accessor :allow_embedding_post_script_fonts
 
+
     # Gets or sets CustomTimeZoneInfo.
     attr_accessor :custom_time_zone_info_data
 
+
     # Gets or sets the value determining how 3D effects are rendered.
     # The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.
-    attr_accessor :dml3_d_effects_rendering_mode
+    attr_reader :dml3_d_effects_rendering_mode
+
 
     # Gets or sets the value determining how DrawingML effects are rendered.
     # { Simplified | None | Fine }.
     # The default value is Simplified.
     # This property is used when the document is exported to fixed page formats.
-    attr_accessor :dml_effects_rendering_mode
+    attr_reader :dml_effects_rendering_mode
+
 
     # Gets or sets the option that controls how DrawingML shapes are rendered.
     # { Fallback | DrawingML }. The default value is Fallback.
     # This property is used when the document is exported to fixed page formats.
-    attr_accessor :dml_rendering_mode
+    attr_reader :dml_rendering_mode
+
 
     # Gets or sets the name of destination file.
     attr_accessor :file_name
 
+
     # Gets or sets the value determining how ink (InkML) objects are rendered.
     # The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.
-    attr_accessor :iml_rendering_mode
+    attr_reader :iml_rendering_mode
+
 
     # Gets or sets a value indicating whether the font attributes will be changed according to the character code being used.
     attr_accessor :update_ambiguous_text_font
+
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
     # The default value is false.
     attr_accessor :update_created_time_property
 
+
     # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
     attr_accessor :update_fields
+
 
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
     attr_accessor :update_last_printed_property
 
+
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     # The default value is false.
     attr_accessor :update_last_saved_time_property
+
 
     # Gets or sets a value indicating whether to zip output or not.
     # The default value is false.
     # When set to true, output files will be zipped.
     attr_accessor :zip_output
 
+
     # Gets or sets the value determining how colors are rendered.
     # { Normal | Grayscale}.
     # The default value is Normal.
     # This property is used when the document is exported to fixed page formats.
-    attr_accessor :color_mode
+    attr_reader :color_mode
+
 
     # Gets or sets the quality of the JPEG images inside PDF document.
     attr_accessor :jpeg_quality
 
+
     # Gets or sets the metafile rendering options.
     attr_accessor :metafile_rendering_options
 
+
     # Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.
-    attr_accessor :numeral_format
+    attr_reader :numeral_format
+
 
     # Gets or sets a value indicating whether it is required to optimize output of XPS.
     # If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.
     # Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.
     attr_accessor :optimize_output
 
+
     # Gets or sets the number of pages to render.
     attr_accessor :page_count
+
 
     # Gets or sets the 0-based index of the first page to render.
     attr_accessor :page_index
 
+
     # Gets or sets a value indicating whether the document should be saved using a booklet printing layout.
     attr_accessor :use_book_fold_printing_settings
 
+
     # Gets the format of save.
     attr_accessor :save_format
+
 
     class EnumAttributeValidator
       attr_reader :datatype

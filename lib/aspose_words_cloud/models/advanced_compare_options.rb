@@ -33,13 +33,16 @@ module AsposeWordsCloud
     # Default value is false.
     attr_accessor :compare_list_definitions
 
+
     # Gets or sets the value indicating whether to ignore difference in DrawingML unique Id.
     # Default value is false.
     attr_accessor :ignore_dml_unique_id
 
+
     # Gets or sets the value indicating whether to ignore difference in StructuredDocumentTag store item Id.
     # Default value is false.
     attr_accessor :ignore_store_item_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

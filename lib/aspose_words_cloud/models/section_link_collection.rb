@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the collection of section's links.
     attr_accessor :section_link_list
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

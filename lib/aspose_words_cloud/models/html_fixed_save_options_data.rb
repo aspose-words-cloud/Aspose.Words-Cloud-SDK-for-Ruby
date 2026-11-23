@@ -35,100 +35,127 @@ module AsposeWordsCloud
     # The default value is false.
     attr_accessor :allow_embedding_post_script_fonts
 
+
     # Gets or sets CustomTimeZoneInfo.
     attr_accessor :custom_time_zone_info_data
 
+
     # Gets or sets the value determining how 3D effects are rendered.
     # The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.
-    attr_accessor :dml3_d_effects_rendering_mode
+    attr_reader :dml3_d_effects_rendering_mode
+
 
     # Gets or sets the value determining how DrawingML effects are rendered.
     # { Simplified | None | Fine }.
     # The default value is Simplified.
     # This property is used when the document is exported to fixed page formats.
-    attr_accessor :dml_effects_rendering_mode
+    attr_reader :dml_effects_rendering_mode
+
 
     # Gets or sets the option that controls how DrawingML shapes are rendered.
     # { Fallback | DrawingML }. The default value is Fallback.
     # This property is used when the document is exported to fixed page formats.
-    attr_accessor :dml_rendering_mode
+    attr_reader :dml_rendering_mode
+
 
     # Gets or sets the name of destination file.
     attr_accessor :file_name
 
+
     # Gets or sets the value determining how ink (InkML) objects are rendered.
     # The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.
-    attr_accessor :iml_rendering_mode
+    attr_reader :iml_rendering_mode
+
 
     # Gets or sets a value indicating whether the font attributes will be changed according to the character code being used.
     attr_accessor :update_ambiguous_text_font
+
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
     # The default value is false.
     attr_accessor :update_created_time_property
 
+
     # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
     attr_accessor :update_fields
+
 
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
     attr_accessor :update_last_printed_property
 
+
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     # The default value is false.
     attr_accessor :update_last_saved_time_property
+
 
     # Gets or sets a value indicating whether to zip output or not.
     # The default value is false.
     # When set to true, output files will be zipped.
     attr_accessor :zip_output
 
+
     # Gets or sets the value determining how colors are rendered.
     # { Normal | Grayscale}.
     # The default value is Normal.
     # This property is used when the document is exported to fixed page formats.
-    attr_accessor :color_mode
+    attr_reader :color_mode
+
 
     # Gets or sets the quality of the JPEG images inside PDF document.
     attr_accessor :jpeg_quality
 
+
     # Gets or sets the metafile rendering options.
     attr_accessor :metafile_rendering_options
 
+
     # Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.
-    attr_accessor :numeral_format
+    attr_reader :numeral_format
+
 
     # Gets or sets a value indicating whether it is required to optimize output of XPS.
     # If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.
     # Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.
     attr_accessor :optimize_output
 
+
     # Gets or sets the number of pages to render.
     attr_accessor :page_count
 
+
     # Gets or sets the 0-based index of the first page to render.
     attr_accessor :page_index
+
 
     # Gets or sets the prefix which is added to all class names in style.css file.
     # The default value is "aw".
     attr_accessor :css_class_names_prefix
 
+
     # Gets or sets the character encoding.
     attr_accessor :encoding
+
 
     # Gets or sets a value indicating whether the CSS (Cascading Style Sheet) should be embedded into the Html document.
     attr_accessor :export_embedded_css
 
+
     # Gets or sets a value indicating whether fonts should be embedded into the Html document in Base64 format.
     attr_accessor :export_embedded_fonts
+
 
     # Gets or sets a value indicating whether images should be embedded into the Html document in Base64 format.
     attr_accessor :export_embedded_images
 
+
     # Gets or sets a value indicating whether form fields are exported as interactive items (as 'input' tag) rather than converted to text or graphics.
     attr_accessor :export_form_fields
 
+
     # Gets or sets the export format of fonts.
-    attr_accessor :font_format
+    attr_reader :font_format
+
 
     # Gets or sets a prefix that is prepended to all generated element IDs in the output document.
     # The default value is null and no prefix is prepended.
@@ -136,9 +163,11 @@ module AsposeWordsCloud
     # and must start with a letter.
     attr_accessor :id_prefix
 
+
     # Gets or sets the horizontal alignment of pages in the HTML document.
     # The default value is HtmlFixedHorizontalPageAlignment.Center.
-    attr_accessor :page_horizontal_alignment
+    attr_reader :page_horizontal_alignment
+
 
     # Gets or sets the margin around pages in HTML document.
     # The margins value is measured in points and should be equal to or greater than 0.
@@ -149,24 +178,31 @@ module AsposeWordsCloud
     # Defines top and bottom page margins if the value is Center.
     attr_accessor :page_margins
 
+
     # Gets or sets the physical folder where resources are saved when exporting the document.
     attr_accessor :resources_folder
 
+
     # Gets or sets the name of the folder used to construct resource URIs.
     attr_accessor :resources_folder_alias
+
 
     # Gets or sets a value indicating whether "@font-face" CSS rules should be placed into a separate file "fontFaces.css" when a document is being saved with external stylesheet (that is, when Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedCss is false). The default value is false, all CSS rules are written into single file "styles.css".
     # Setting this property to true restores the old behavior (separate files) for compatibility with legacy code.
     attr_accessor :save_font_face_css_separately
 
+
     # Gets or sets a value indicating whether to show border around pages.
     attr_accessor :show_page_border
+
 
     # Gets or sets a value indicating whether fonts from target machine must be used to display the document. If this flag is set to true, Aspose.Words.Saving.HtmlFixedSaveOptions.FontFormat and Aspose.Words.Saving.HtmlFixedSaveOptions.ExportEmbeddedFonts properties do not have effect, also Aspose.Words.Saving.HtmlFixedSaveOptions.ResourceSavingCallback is not fired for fonts. The default value is false.
     attr_accessor :use_target_machine_fonts
 
+
     # Gets the format of save.
     attr_accessor :save_format
+
 
     class EnumAttributeValidator
       attr_reader :datatype

@@ -32,11 +32,14 @@ module AsposeWordsCloud
     # Gets or sets the owner password for the encrypted PDF document.
     attr_accessor :owner_password
 
+
     # Gets or sets the operations that are allowed to a user on the encrypted PDF document.
     attr_accessor :permissions
 
+
     # Gets or sets the user password required for opening the encrypted PDF document.
     attr_accessor :user_password
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

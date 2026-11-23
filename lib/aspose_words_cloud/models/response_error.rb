@@ -32,17 +32,22 @@ module AsposeWordsCloud
     # Gets or sets the API error code.
     attr_accessor :code
 
+
     # Gets or sets the server DateTime.
     attr_accessor :date_time
+
 
     # Gets or sets the error description.
     attr_accessor :description
 
+
     # Gets or sets the inner error.
     attr_accessor :inner_error
 
+
     # Gets or sets the error message.
     attr_accessor :message
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

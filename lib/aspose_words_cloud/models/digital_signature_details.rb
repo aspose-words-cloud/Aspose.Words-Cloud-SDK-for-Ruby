@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the certificate's filename using for signing.
     attr_accessor :certificate_filename
 
+
     # Gets or sets signing options.
     attr_accessor :sign_options
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

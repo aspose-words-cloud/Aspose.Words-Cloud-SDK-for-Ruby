@@ -32,130 +32,171 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets a value indicating whether the font is formatted as all capital letters.
     attr_accessor :all_caps
+
 
     # Gets or sets a value indicating whether the contents of this run shall have right-to-left characteristics.
     # This property, when on, shall not be used with strongly left-to-right text. Any behavior under that condition is unspecified. This property, when off, shall not be used with strong right-to-left text. Any behavior under that condition is unspecified.When the contents of this run are displayed, all characters shall be treated as complex script characters for formatting purposes. This means that BoldBi, ItalicBi, SizeBi and a corresponding font name will be used when rendering this run.Also, when the contents of this run are displayed, this property acts as a right-to-left override for characters which are classified as "weak types" and "neutral types".
     attr_accessor :bidi
 
+
     # Gets or sets a value indicating whether the font is formatted as bold.
     attr_accessor :bold
+
 
     # Gets or sets a value indicating whether the right-to-left text is formatted as bold.
     attr_accessor :bold_bi
 
+
     # Gets or sets the border object, that specifies border for the font.
     attr_accessor :border
+
 
     # Gets or sets the color of the font.
     attr_accessor :color
 
+
     # Gets or sets a value indicating whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run.
     attr_accessor :complex_script
+
 
     # Gets or sets a value indicating whether the font is formatted as double strikethrough text.
     attr_accessor :double_strike_through
 
+
     # Gets or sets a value indicating whether the font is formatted as embossed.
     attr_accessor :emboss
+
 
     # Gets or sets a value indicating whether the font is formatted as engraved.
     attr_accessor :engrave
 
+
     # Gets or sets a value indicating whether the font is formatted as hidden text.
     attr_accessor :hidden
+
 
     # Gets or sets the highlight (marker) color.
     attr_accessor :highlight_color
 
+
     # Gets or sets a value indicating whether the font is formatted as italic.
     attr_accessor :italic
+
 
     # Gets or sets a value indicating whether the right-to-left text is formatted as italic.
     attr_accessor :italic_bi
 
+
     # Gets or sets the font size at which kerning starts.
     attr_accessor :kerning
+
 
     # Gets or sets the locale identifier (language) of the formatted characters.
     # For the list of locale identifiers see http://www.microsoft.com/globaldev/reference/lcid-all.mspx.
     attr_accessor :locale_id
 
+
     # Gets or sets the locale identifier (language) of the formatted right-to-left characters.
     # For the list of locale identifiers see http://www.microsoft.com/globaldev/reference/lcid-all.mspx.
     attr_accessor :locale_id_bi
+
 
     # Gets or sets the locale identifier (language) of the formatted Asian characters.
     # For the list of locale identifiers see http://www.microsoft.com/globaldev/reference/lcid-all.mspx.
     attr_accessor :locale_id_far_east
 
+
     # Gets or sets the name of the font.
     attr_accessor :name
+
 
     # Gets or sets the font used for Latin text (characters with character codes from 0 (zero) through 127).
     attr_accessor :name_ascii
 
+
     # Gets or sets the name of the font in a right-to-left language document.
     attr_accessor :name_bi
+
 
     # Gets or sets the East Asian font name.
     attr_accessor :name_far_east
 
+
     # Gets or sets the font used for characters with character codes from 128 through 255.
     attr_accessor :name_other
+
 
     # Gets or sets a value indicating whether the formatted characters are not to be spell checked.
     attr_accessor :no_proofing
 
+
     # Gets or sets a value indicating whether the font is formatted as outline.
     attr_accessor :outline
+
 
     # Gets or sets the position of text (in points) relative to the base line.
     # A positive number raises the text, and a negative number lowers it.
     attr_accessor :position
 
+
     # Gets or sets character width scaling in percent.
     attr_accessor :scaling
+
 
     # Gets or sets a value indicating whether the font is formatted as shadowed.
     attr_accessor :shadow
 
+
     # Gets or sets the font size in points.
     attr_accessor :size
+
 
     # Gets or sets the font size in points used in a right-to-left document.
     attr_accessor :size_bi
 
+
     # Gets or sets a value indicating whether the font is formatted as small capital letters.
     attr_accessor :small_caps
+
 
     # Gets or sets the spacing (in points) between characters.
     attr_accessor :spacing
 
+
     # Gets or sets a value indicating whether the font is formatted as strikethrough text.
     attr_accessor :strike_through
 
+
     # Gets or sets the locale independent style identifier of the character style applied to this formatting.
-    attr_accessor :style_identifier
+    attr_reader :style_identifier
+
 
     # Gets or sets the name of the character style applied to this formatting.
     attr_accessor :style_name
 
+
     # Gets or sets a value indicating whether the font is formatted as subscript.
     attr_accessor :subscript
+
 
     # Gets or sets a value indicating whether the font is formatted as superscript.
     attr_accessor :superscript
 
+
     # Gets or sets the font animation effect.
-    attr_accessor :text_effect
+    attr_reader :text_effect
+
 
     # Gets or sets the type of underline applied to the font.
-    attr_accessor :underline
+    attr_reader :underline
+
 
     # Gets or sets the color of the underline applied to the font.
     attr_accessor :underline_color
+
 
     class EnumAttributeValidator
       attr_reader :datatype

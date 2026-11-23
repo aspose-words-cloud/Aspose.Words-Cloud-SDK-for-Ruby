@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the LCID of the field.
     attr_accessor :locale_id
 
+
     # Gets or sets the field code.
     attr_accessor :field_code
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

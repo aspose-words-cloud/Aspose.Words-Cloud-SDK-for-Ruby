@@ -32,12 +32,15 @@ module AsposeWordsCloud
     # Gets or sets the watermark image.
     attr_accessor :image
 
+
     # Gets or sets a boolean value which is responsible for washout effect of the watermark. The default value is true.
     attr_accessor :is_washout
+
 
     # Gets or sets the scale factor expressed as a fraction of the image. The default value is 0 - auto.
     # Valid values range from 0 to 65.5 inclusive. Auto scale means that the watermark will be scaled to its max width and max height relative to the page margins.
     attr_accessor :scale
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

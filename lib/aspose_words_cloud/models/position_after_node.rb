@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the node id.
     attr_accessor :node_id
 
+
     # Gets position type.
     attr_accessor :type
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

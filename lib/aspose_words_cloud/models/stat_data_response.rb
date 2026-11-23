@@ -32,11 +32,14 @@ module AsposeWordsCloud
     # Gets or sets the request Id.
     attr_accessor :request_id
 
+
     # Gets or sets the link to the document.
     attr_accessor :document_link
 
+
     # Gets or sets the statistical data of the document.
     attr_accessor :stat_data
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

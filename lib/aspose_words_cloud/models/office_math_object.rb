@@ -32,22 +32,28 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the node id.
     attr_accessor :node_id
+
 
     # Gets or sets the content of a footnote.
     attr_accessor :content
 
+
     # Gets or sets the display format type of the OfficeMath object. This display format defines whether an equation is displayed inline with the text or displayed on its own line.
     # Display format type has effect for top level Office Math only.Returned display format type is always Inline for nested Office Math.
-    attr_accessor :display_type
+    attr_reader :display_type
+
 
     # Gets or sets the justification of the OfficeMath object.
     # Justification cannot be set to the Office Math with display format type Inline.Inline justification cannot be set to the Office Math with display format type Display.Corresponding DisplayType has to be set before setting Office Math justification.
-    attr_accessor :justification
+    attr_reader :justification
+
 
     # Gets or sets the type of the OfficeMath object.
-    attr_accessor :math_object_type
+    attr_reader :math_object_type
+
 
     class EnumAttributeValidator
       attr_reader :datatype

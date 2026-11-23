@@ -31,6 +31,7 @@ module AsposeWordsCloud
   class ImageEntry
     # Gets or sets the file reference.
     attr_accessor :file_reference
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

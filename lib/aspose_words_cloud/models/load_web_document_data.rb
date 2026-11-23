@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the save options.
     attr_accessor :save_options
 
+
     # Gets or sets the web document URL.
     attr_accessor :loading_document_url
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

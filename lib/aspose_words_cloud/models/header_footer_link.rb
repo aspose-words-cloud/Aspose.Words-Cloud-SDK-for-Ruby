@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the paragraph's text.
-    attr_accessor :type
+    attr_reader :type
+
 
     class EnumAttributeValidator
       attr_reader :datatype

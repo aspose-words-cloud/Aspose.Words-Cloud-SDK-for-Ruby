@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the watermark rotation angle.
     attr_accessor :rotation_angle
 
+
     # Gets or sets the watermark text.
     attr_accessor :text
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

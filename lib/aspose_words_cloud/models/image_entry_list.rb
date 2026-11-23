@@ -33,8 +33,10 @@ module AsposeWordsCloud
     # This value only has an effect when adding images to a document that supports pagination.
     attr_accessor :append_each_image_on_new_page
 
+
     # Gets or sets the list of images.
     attr_accessor :image_entries
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

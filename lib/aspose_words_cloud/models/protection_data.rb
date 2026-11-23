@@ -30,7 +30,8 @@ module AsposeWordsCloud
   # Container for the data about protection of the document.
   class ProtectionData
     # Gets or sets type of the protection.
-    attr_accessor :protection_type
+    attr_reader :protection_type
+
 
     class EnumAttributeValidator
       attr_reader :datatype

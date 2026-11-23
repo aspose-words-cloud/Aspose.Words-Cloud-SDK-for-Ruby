@@ -32,11 +32,14 @@ module AsposeWordsCloud
     # Gets or sets the number of columns. The default value is 2.
     attr_accessor :columns_count
 
+
     # Gets or sets the position to insert the table. The table will be inserted using the specified position.
     attr_accessor :position
 
+
     # Gets or sets the number of rows. The default value is 2.
     attr_accessor :rows_count
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

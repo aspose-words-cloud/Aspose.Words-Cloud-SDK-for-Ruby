@@ -32,97 +32,126 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets a value indicating whether inter-character spacing is automatically adjusted between regions of Latin text and regions of East Asian text in the current paragraph.
     attr_accessor :add_space_between_far_east_and_alpha
+
 
     # Gets or sets a value indicating whether inter-character spacing is automatically adjusted between regions of numbers and regions of East Asian text in the current paragraph.
     attr_accessor :add_space_between_far_east_and_digit
 
+
     # Gets or sets text alignment for the paragraph.
-    attr_accessor :alignment
+    attr_reader :alignment
+
 
     # Gets or sets a value indicating whether this is a right-to-left paragraph.
     # When true, the runs and other inline objects in this paragraph are laid out right to left.
     attr_accessor :bidi
 
+
     # Gets or sets the position for a drop cap text.
-    attr_accessor :drop_cap_position
+    attr_reader :drop_cap_position
+
 
     # Gets or sets the value (in points) for a first line or hanging indent.
     # Use a positive value to set a first-line indent, and use a negative value to set a hanging indent.
     attr_accessor :first_line_indent
 
+
     # Gets or sets a value indicating whether all lines in the paragraph are to remain on the same page.
     attr_accessor :keep_together
+
 
     # Gets or sets a value indicating whether the paragraph is to remains on the same page as the paragraph that follows it.
     attr_accessor :keep_with_next
 
+
     # Gets or sets the value (in points), that represents the left indent for paragraph.
     attr_accessor :left_indent
+
 
     # Gets or sets the line spacing (in points) for the paragraph.
     # When LineSpacingRule property is set to AtLeast, the line spacing can be greater than or equal to, but never less than the specified LineSpacing value.When LineSpacingRule property is set to Exactly, the line spacing never changes from the specified LineSpacing value, even if a larger font is used within the paragraph.
     attr_accessor :line_spacing
 
+
     # Gets or sets the line spacing for the paragraph.
-    attr_accessor :line_spacing_rule
+    attr_reader :line_spacing_rule
+
 
     # Gets or sets the number of lines of the paragraph text used to calculate the drop cap height.
     attr_accessor :lines_to_drop
+
 
     # Gets or sets a value indicating whether SpaceBefore and SpaceAfter will be ignored between the paragraphs of the same style.
     # This setting only takes affect when applied to a paragraph style. If applied to a paragraph directly, it has no effect.
     attr_accessor :no_space_between_paragraphs_of_same_style
 
+
     # Gets or sets the outline level of the paragraph in the document.
-    attr_accessor :outline_level
+    attr_reader :outline_level
+
 
     # Gets or sets a value indicating whether a page break is forced before the paragraph.
     attr_accessor :page_break_before
 
+
     # Gets or sets the value (in points) that represents the right indent for paragraph.
     attr_accessor :right_indent
+
 
     # Gets or sets the amount of spacing (in points) after the paragraph.
     # Has no effect when SpaceAfterAuto is true.
     attr_accessor :space_after
 
+
     # Gets or sets a value indicating whether the amount of spacing after the paragraph is set automatically.
     # When set to true, overrides the effect of SpaceAfter.
     attr_accessor :space_after_auto
+
 
     # Gets or sets the amount of spacing (in points) before the paragraph.
     # Has no effect when SpaceBeforeAuto is true.
     attr_accessor :space_before
 
+
     # Gets or sets a value indicating whether the amount of spacing before the paragraph is set automatically.
     # When set to true, overrides the effect of SpaceBefore.
     attr_accessor :space_before_auto
 
+
     # Gets or sets the locale independent style identifier of the paragraph style applied to this formatting.
-    attr_accessor :style_identifier
+    attr_reader :style_identifier
+
 
     # Gets or sets the name of the paragraph style applied to this formatting.
     attr_accessor :style_name
 
+
     # Gets or sets a value indicating whether the current paragraph should be exempted from any hyphenation which is applied in the document settings.
     attr_accessor :suppress_auto_hyphens
+
 
     # Gets or sets a value indicating whether the current paragraph's lines should be exempted from line numbering which is applied in the parent section.
     attr_accessor :suppress_line_numbers
 
+
     # Gets or sets a value indicating whether the first and last lines in the paragraph are to remain on the same page as the rest of the paragraph.
     attr_accessor :widow_control
+
 
     # Gets or sets the Shading object, that refers to the shading formatting for the paragraph.
     attr_accessor :shading
 
+
     # Gets or sets a value indicating whether the paragraph is an item in a bulleted or numbered list.
     attr_accessor :is_list_item
 
+
     # Gets or sets a value indicating whether the paragraph style is one of the built-in Heading styles.
     attr_accessor :is_heading
+
 
     class EnumAttributeValidator
       attr_reader :datatype

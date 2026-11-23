@@ -30,7 +30,8 @@ module AsposeWordsCloud
   # Container class for the document optimization options.
   class OptimizationOptions
     # Gets or sets the specific MSWord version.
-    attr_accessor :ms_word_version
+    attr_reader :ms_word_version
+
 
     class EnumAttributeValidator
       attr_reader :datatype

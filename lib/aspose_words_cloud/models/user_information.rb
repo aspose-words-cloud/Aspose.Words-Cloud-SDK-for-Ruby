@@ -32,11 +32,14 @@ module AsposeWordsCloud
     # Gets or sets user address.
     attr_accessor :address
 
+
     # Gets or sets user initials.
     attr_accessor :initials
 
+
     # Gets or sets user name.
     attr_accessor :name
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

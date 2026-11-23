@@ -36,6 +36,7 @@ module AsposeWordsCloud
     # is not created by default.
     # The default value is false.
     attr_accessor :always_generate_root_object
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

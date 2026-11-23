@@ -33,8 +33,10 @@ module AsposeWordsCloud
     # Gets or sets the request Id.
     attr_accessor :request_id
 
+
     # Gets or sets the page setup of a section.
     attr_accessor :page_setup
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

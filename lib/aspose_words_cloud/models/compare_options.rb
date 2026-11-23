@@ -32,35 +32,46 @@ module AsposeWordsCloud
     # Gets or sets whether accept revisions before comparison or not.
     attr_accessor :accept_all_revisions_before_comparison
 
+
     # Gets or sets the option indicating whether changes are tracked by character or by word.
-    attr_accessor :granularity
+    attr_reader :granularity
+
 
     # Gets or sets a value indicating whether documents comparison is case insensitive. By default comparison is case sensitive.
     attr_accessor :ignore_case_changes
 
+
     # Gets or sets a value indicating whether comments content is ignored. By default comments are not ignored.
     attr_accessor :ignore_comments
+
 
     # Gets or sets a value indicating whether fields content is ignored. By default fields are not ignored.
     attr_accessor :ignore_fields
 
+
     # Gets or sets a value indicating whether footnotes/endnotes content is ignored. By default footnotes/endnotes are not ignored.
     attr_accessor :ignore_footnotes
+
 
     # Gets or sets a value indicating whether formatting is ignored. By default document formatting is not ignored.
     attr_accessor :ignore_formatting
 
+
     # Gets or sets a value indicating whether headers and footers content is ignored. By default headers and footers are not ignored.
     attr_accessor :ignore_headers_and_footers
+
 
     # Gets or sets a value indicating whether tables content is ignored. By default tables are not ignored.
     attr_accessor :ignore_tables
 
+
     # Gets or sets a value indicating whether textboxes content is ignored. By default textboxes are not ignored.
     attr_accessor :ignore_textboxes
 
+
     # Gets or sets the option that controls which document shall be used as a target during comparison.
-    attr_accessor :target
+    attr_reader :target
+
 
     class EnumAttributeValidator
       attr_reader :datatype

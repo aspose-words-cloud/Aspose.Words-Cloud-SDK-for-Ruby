@@ -35,87 +35,110 @@ module AsposeWordsCloud
     # The default value is false.
     attr_accessor :allow_embedding_post_script_fonts
 
+
     # Gets or sets CustomTimeZoneInfo.
     attr_accessor :custom_time_zone_info_data
 
+
     # Gets or sets the value determining how 3D effects are rendered.
     # The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.
-    attr_accessor :dml3_d_effects_rendering_mode
+    attr_reader :dml3_d_effects_rendering_mode
+
 
     # Gets or sets the value determining how DrawingML effects are rendered.
     # { Simplified | None | Fine }.
     # The default value is Simplified.
     # This property is used when the document is exported to fixed page formats.
-    attr_accessor :dml_effects_rendering_mode
+    attr_reader :dml_effects_rendering_mode
+
 
     # Gets or sets the option that controls how DrawingML shapes are rendered.
     # { Fallback | DrawingML }. The default value is Fallback.
     # This property is used when the document is exported to fixed page formats.
-    attr_accessor :dml_rendering_mode
+    attr_reader :dml_rendering_mode
+
 
     # Gets or sets the name of destination file.
     attr_accessor :file_name
 
+
     # Gets or sets the value determining how ink (InkML) objects are rendered.
     # The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.
-    attr_accessor :iml_rendering_mode
+    attr_reader :iml_rendering_mode
+
 
     # Gets or sets a value indicating whether the font attributes will be changed according to the character code being used.
     attr_accessor :update_ambiguous_text_font
+
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
     # The default value is false.
     attr_accessor :update_created_time_property
 
+
     # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
     attr_accessor :update_fields
+
 
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
     attr_accessor :update_last_printed_property
 
+
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     # The default value is false.
     attr_accessor :update_last_saved_time_property
+
 
     # Gets or sets a value indicating whether to zip output or not.
     # The default value is false.
     # When set to true, output files will be zipped.
     attr_accessor :zip_output
 
+
     # Gets or sets the character encoding to use when exporting in plain text format.
     attr_accessor :encoding
 
+
     # Gets or sets the option that controls whether to output headers and footers when exporting in plain text format.
     # The default value is TxtExportHeadersFootersMode.PrimaryOnly.
-    attr_accessor :export_headers_footers_mode
+    attr_reader :export_headers_footers_mode
+
 
     # Gets or sets a value indicating whether the page breaks should be preserved during export.
     # The default value is false.
     attr_accessor :force_page_breaks
 
+
     # Gets or sets the string to use as a paragraph break when exporting in plain text format.
     attr_accessor :paragraph_break
+
 
     # Gets or sets a value indicating whether to add bi-directional marks before each BiDi run when exporting in plain text format.
     # The default value is true.
     attr_accessor :add_bidi_marks
 
+
     # Gets or sets an integer value that specifies the maximum number of characters per one line.
     # The default value is 0, that means no limit.
     attr_accessor :max_characters_per_line
 
+
     # Gets or sets a value that specifies how OfficeMath will be written to the output file.
     # The default value is Text.
-    attr_accessor :office_math_export_mode
+    attr_reader :office_math_export_mode
+
 
     # Gets or sets a value indicating whether the program should attempt to preserve layout of tables when saving in the plain text format.
     attr_accessor :preserve_table_layout
 
+
     # Gets or sets a value indicating whether the program should simplify list labels in case of complex label formatting not being adequately represented by plain text.
     attr_accessor :simplify_list_labels
 
+
     # Gets the format of save.
     attr_accessor :save_format
+
 
     class EnumAttributeValidator
       attr_reader :datatype

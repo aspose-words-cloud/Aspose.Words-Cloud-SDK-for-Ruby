@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the total count of paragraphs in footnotes.
     attr_accessor :paragraph_count
 
+
     # Gets or sets the total count of words in footnotes.
     attr_accessor :word_count
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

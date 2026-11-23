@@ -31,6 +31,7 @@ module AsposeWordsCloud
   class CustomXmlPartLink
     # Gets or sets the link to the document.
     attr_accessor :link
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

@@ -32,11 +32,14 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the hypelink's display text.
     attr_accessor :display_text
 
+
     # Gets or sets the value.
     attr_accessor :value
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets Key.
     attr_accessor :key
 
+
     # Gets or sets Value.
     attr_accessor :value
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

@@ -33,16 +33,20 @@ module AsposeWordsCloud
     # This property is not used by Aspose.Words. The next paragraph style will only be applied automatically when you edit the document in MS Word.
     attr_accessor :next_paragraph_style_name
 
+
     # Gets or sets the name of the style this style is based on.
     # This will be an empty string if the style is not based on any other style and it can be set to an empty string.
     attr_accessor :base_style_name
 
+
     # Gets or sets a value indicating whether this style is shown in the Quick Style gallery inside MS Word UI.
     attr_accessor :is_quick_style
+
 
     # Gets or sets the name of the style.
     # Cannot be an empty string. If there already is a style with such name in the collection, than this style will override it. All affected nodes will reference new style.
     attr_accessor :name
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

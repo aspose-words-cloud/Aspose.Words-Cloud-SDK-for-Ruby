@@ -32,13 +32,16 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the custom xml part id.
     # Cannot be null.
     attr_accessor :id
 
+
     # Gets or sets the custom xml part data.
     # Cannot be null.Default is an empty string.
     attr_accessor :data
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

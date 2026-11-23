@@ -32,17 +32,22 @@ module AsposeWordsCloud
     # True if it is a folder.
     attr_accessor :is_folder
 
+
     # File or folder last modified DateTime.
     attr_accessor :modified_date
+
 
     # File or folder name.
     attr_accessor :name
 
+
     # File or folder path.
     attr_accessor :path
 
+
     # File or folder size.
     attr_accessor :size
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

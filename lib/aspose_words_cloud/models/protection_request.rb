@@ -32,11 +32,14 @@ module AsposeWordsCloud
     # Gets or sets the new password.
     attr_accessor :new_password
 
+
     # Gets or sets the current password.
     attr_accessor :password
 
+
     # Gets or sets the new type of protection.
     attr_accessor :protection_type
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

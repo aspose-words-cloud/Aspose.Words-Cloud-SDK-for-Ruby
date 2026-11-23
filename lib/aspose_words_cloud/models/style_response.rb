@@ -33,8 +33,10 @@ module AsposeWordsCloud
     # Gets or sets the request Id.
     attr_accessor :request_id
 
+
     # Gets or sets the style, containded in the document.
     attr_accessor :style
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

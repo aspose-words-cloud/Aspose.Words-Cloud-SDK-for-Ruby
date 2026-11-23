@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the array of bookmarks.
     attr_accessor :bookmark_list
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

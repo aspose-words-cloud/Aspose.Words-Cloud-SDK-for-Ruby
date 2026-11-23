@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the bookmark's level.
     attr_accessor :bookmarks_outline_level
 
+
     # Gets or sets the bookmark's name.
     attr_accessor :name
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

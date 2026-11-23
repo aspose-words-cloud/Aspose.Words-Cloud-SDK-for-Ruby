@@ -32,51 +32,66 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the option that controls how an inline table is aligned in the document.
     # The default value is Left.
-    attr_accessor :alignment
+    attr_reader :alignment
+
 
     # Gets or sets a value indicating whether to automatically resize cells in a table to fit their contents.
     # The default value is true.
     attr_accessor :allow_auto_fit
 
+
     # Gets or sets a value indicating whether this is a right-to-left table.
     # When true, the cells in this row are laid out right to left.The default value is false.
     attr_accessor :bidi
 
+
     # Gets or sets the amount of space (in points) to add below the contents of cells.
     attr_accessor :bottom_padding
+
 
     # Gets or sets the amount of space (in points) between the cells.
     attr_accessor :cell_spacing
 
+
     # Gets or sets the value, that represents the left indent of the table.
     attr_accessor :left_indent
 
+
     # Gets or sets the amount of space (in points) to add to the left of the contents of cells.
     attr_accessor :left_padding
+
 
     # Gets or sets the table preferred width.
     # Preferred width can be specified as a percentage, number of points or a special "auto" value.
     attr_accessor :preferred_width
 
+
     # Gets or sets the amount of space (in points) to add to the right of the contents of cells.
     attr_accessor :right_padding
 
+
     # Gets or sets the locale independent style identifier of the table style applied to this table.
-    attr_accessor :style_identifier
+    attr_reader :style_identifier
+
 
     # Gets or sets the name of the table style applied to this table.
     attr_accessor :style_name
 
+
     # Gets or sets the bit flags, that specify how a table style is applied to this table.
-    attr_accessor :style_options
+    attr_reader :style_options
+
 
     # Gets or sets the option that controls text wrapping for the table.
-    attr_accessor :text_wrapping
+    attr_reader :text_wrapping
+
 
     # Gets or sets the amount of space (in points) to add above the contents of cells.
     attr_accessor :top_padding
+
 
     class EnumAttributeValidator
       attr_reader :datatype

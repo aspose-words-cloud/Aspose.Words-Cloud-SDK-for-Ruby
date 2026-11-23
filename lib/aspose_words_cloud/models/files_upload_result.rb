@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # List of errors.
     attr_accessor :errors
 
+
     # List of uploaded file names.
     attr_accessor :uploaded
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

@@ -32,17 +32,22 @@ module AsposeWordsCloud
     # Gets or sets text alignment, possible values are left, right, center or justify.
     attr_accessor :alignment
 
+
     # Gets or sets the page number format, e.g. "{PAGE} of {NUMPAGES}".
     attr_accessor :format
+
 
     # Gets or sets a value indicating whether if true the page number is added at the top of the page, else at the bottom.
     attr_accessor :is_top
 
+
     # Gets or sets the starting page number of the document.
     attr_accessor :page_starting_number
 
+
     # Gets or sets a value indicating whether if true the page number is added on first page too.
     attr_accessor :set_page_number_on_first_page
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

@@ -32,44 +32,57 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the amount of space (in points) to add below the contents of the cell.
     attr_accessor :bottom_padding
+
 
     # Gets or sets a value indicating whether to fit text in the cell, compress each paragraph to the width of the cell.
     attr_accessor :fit_text
 
+
     # Gets or sets the option that controls how the cell is merged horizontally with other cells in the row.
-    attr_accessor :horizontal_merge
+    attr_reader :horizontal_merge
+
 
     # Gets or sets the amount of space (in points) to add to the left of the contents of the cell.
     attr_accessor :left_padding
 
+
     # Gets or sets the orientation of text in a table cell.
-    attr_accessor :orientation
+    attr_reader :orientation
+
 
     # Gets or sets the preferred width of the cell.
     # The preferred width (along with the table's Auto Fit option) determines how the actual width of the cell is calculated by the table layout algorithm. Table layout can be performed by Aspose.Words when it saves the document or by Microsoft Word when it displays the document.The preferred width can be specified in points or in percent. The preferred width can also be specified as "auto", which means no preferred width is specified.The default value is Auto.
     attr_accessor :preferred_width
 
+
     # Gets or sets the amount of space (in points) to add to the right of the contents of the cell.
     attr_accessor :right_padding
+
 
     # Gets or sets the amount of space (in points) to add above the contents of the cell.
     attr_accessor :top_padding
 
+
     # Gets or sets the vertical alignment of text in the cell.
-    attr_accessor :vertical_alignment
+    attr_reader :vertical_alignment
+
 
     # Gets or sets the option that controls how the cell is merged with other cells vertically.
     # Cells can only be merged vertically if their left and right boundaries are identical.When cells are vertically merged, the display areas of the merged cells are consolidated. The consolidated area is used to display the contents of the first vertically merged cell and all other vertically merged cells must be empty.
-    attr_accessor :vertical_merge
+    attr_reader :vertical_merge
+
 
     # Gets or sets the width of the cell in points.
     # The width is calculated by Aspose.Words on document loading and saving. Currently, not every combination of table, cell and document properties is supported. The returned value may not be accurate for some documents. It may not exactly match the cell width as calculated by MS Word when the document is opened in MS Word.Setting this property is not recommended. There is no guarantee that the cell will actually have the set width. The width may be adjusted to accommodate cell contents in an auto-fit table layout. Cells in other rows may have conflicting width settings. The table may be resized to fit into the container or to meet table width settings. Consider using PreferredWidth for setting the cell width. Setting this property sets PreferredWidth implicitly since version 15.8.
     attr_accessor :width
 
+
     # Gets or sets a value indicating whether to wrap text in the cell.
     attr_accessor :wrap_text
+
 
     class EnumAttributeValidator
       attr_reader :datatype

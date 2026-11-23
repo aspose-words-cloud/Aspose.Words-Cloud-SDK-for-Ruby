@@ -32,21 +32,27 @@ module AsposeWordsCloud
     # Gets or sets font color. The default value is System.Drawing.Color.Silver.
     attr_accessor :color
 
+
     # Gets or sets font family name. The default value is "Calibri".
     attr_accessor :font_family
+
 
     # Gets or sets a font size. The default value is 0 - auto.
     # Valid values range from 0 to 65.5 inclusive. Auto font size means that the watermark will be scaled to its max width and max height relative to the page margins.
     attr_accessor :font_size
 
+
     # Gets or sets a boolean value which is responsible for opacity of the watermark. The default value is true.
     attr_accessor :is_semitrasparent
 
+
     # Gets or sets layout of the watermark. The default value is Aspose.Words.WatermarkLayout.Diagonal.
-    attr_accessor :layout
+    attr_reader :layout
+
 
     # Gets or sets the watermark text.
     attr_accessor :text
+
 
     class EnumAttributeValidator
       attr_reader :datatype

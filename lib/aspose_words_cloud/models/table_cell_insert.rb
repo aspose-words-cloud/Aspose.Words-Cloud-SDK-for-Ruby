@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the position of the table cell that will be used to determine the placement of a new cell.
     attr_accessor :existing_cell_position
 
+
     # Gets or sets the 0-based index, the table cell will be inserted after.
     attr_accessor :insert_after
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

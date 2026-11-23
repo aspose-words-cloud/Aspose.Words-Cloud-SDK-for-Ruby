@@ -32,17 +32,22 @@ module AsposeWordsCloud
     # Gets or sets the detailed statistics on footnotes.
     attr_accessor :footnotes_stat_data
 
+
     # Gets or sets the total count of pages in the document.
     attr_accessor :page_count
+
 
     # Gets or sets the total count of paragraphs in the document.
     attr_accessor :paragraph_count
 
+
     # Gets or sets the total count of words in the document.
     attr_accessor :word_count
 
+
     # Gets or sets the detailed statistics on all pages.
     attr_accessor :page_stat_data
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

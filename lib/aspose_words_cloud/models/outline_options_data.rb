@@ -32,21 +32,27 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether to create missing outline levels when the document is exported. The default value is false.
     attr_accessor :create_missing_outline_levels
 
+
     # Gets or sets a value indicating whether to create outlines for headings (paragraphs formatted with the Heading styles) inside tables.
     # The default value is false.
     attr_accessor :create_outlines_for_headings_in_tables
 
+
     # Gets or sets the default level in the document outline at which to display Word bookmarks.
     attr_accessor :default_bookmarks_outline_level
+
 
     # Gets or sets the number of levels in the document outline to show expanded when the file is viewed.
     attr_accessor :expanded_outline_levels
 
+
     # Gets or sets the number of levels of headings (paragraphs formatted with the Heading styles) to include in the document outline.
     attr_accessor :headings_outline_levels
 
+
     # Gets or sets the individual bookmarks outline level.
     attr_accessor :bookmarks_outline_levels
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

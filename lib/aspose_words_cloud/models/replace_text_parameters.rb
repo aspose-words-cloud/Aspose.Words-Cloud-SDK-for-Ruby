@@ -32,20 +32,26 @@ module AsposeWordsCloud
     # Gets or sets a value indicating whether apply superscript to font or not.
     attr_accessor :apply_superscript
 
+
     # Gets or sets a value indicating whether flag, true means the search is case-sensitive; false means the search is not case-sensitive.
     attr_accessor :is_match_case
+
 
     # Gets or sets a value indicating whether flag, means that only whole word matched are replaced.
     attr_accessor :is_match_whole_word
 
+
     # Gets or sets a value indicating whether flag, means that OldValue contains regex expression.
     attr_accessor :is_old_value_regex
+
 
     # Gets or sets the new text value to replace by.
     attr_accessor :new_value
 
+
     # Gets or sets the old text value (or regex pattern IsOldValueRegex) to replace.
     attr_accessor :old_value
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the link to the dest document (result of the modification operation).
     attr_accessor :dest
 
+
     # Gets or sets the link to the source document (source for the modification operation).
     attr_accessor :source
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

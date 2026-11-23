@@ -31,6 +31,7 @@ module AsposeWordsCloud
   class StyleCopy
     # Gets or sets the case sensitive name of the style to copy from it.
     attr_accessor :style_name
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

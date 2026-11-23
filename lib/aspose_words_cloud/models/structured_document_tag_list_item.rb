@@ -33,9 +33,11 @@ module AsposeWordsCloud
     # Cannot be null and cannot be an empty string.
     attr_accessor :display_text
 
+
     # Gets or sets the value of this list item.
     # Cannot be null and cannot be an empty string.
     attr_accessor :value
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

@@ -33,11 +33,14 @@ module AsposeWordsCloud
     # Gets or sets the request Id.
     attr_accessor :request_id
 
+
     # Gets or sets the regular expression pattern used to find matches.
     attr_accessor :searching_pattern
 
+
     # Gets or sets the collection of search results.
     attr_accessor :search_results
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

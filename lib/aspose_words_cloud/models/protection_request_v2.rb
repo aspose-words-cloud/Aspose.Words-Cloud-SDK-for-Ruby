@@ -33,8 +33,10 @@ module AsposeWordsCloud
     # This property is required, but empty value is allowed.
     attr_accessor :protection_password
 
+
     # Gets or sets the new type of the document protection.
-    attr_accessor :protection_type
+    attr_reader :protection_type
+
 
     class EnumAttributeValidator
       attr_reader :datatype

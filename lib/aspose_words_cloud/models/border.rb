@@ -33,27 +33,34 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the border type.
-    attr_accessor :border_type
+    attr_reader :border_type
+
 
     # Gets or sets the border color.
     attr_accessor :color
+
 
     # Gets or sets the distance of the border from text or from the page edge in points.
     # Has no effect and will be automatically reset to zero for borders of table cells.
     attr_accessor :distance_from_text
 
+
     # Gets or sets the border style.
     # If you set line style to none, then line width is automatically changed to zero.
-    attr_accessor :line_style
+    attr_reader :line_style
+
 
     # Gets or sets the border width in points.
     # If you set line width greater than zero when line style is none, the line style is automatically changed to single line.
     attr_accessor :line_width
 
+
     # Gets or sets a value indicating whether the border has a shadow.
     # In Microsoft Word, for a border to have a shadow, the borders on all four sides (left, top, right and bottom) should be of the same type, width, color and all should have the Shadow property set to true.
     attr_accessor :shadow
+
 
     class EnumAttributeValidator
       attr_reader :datatype

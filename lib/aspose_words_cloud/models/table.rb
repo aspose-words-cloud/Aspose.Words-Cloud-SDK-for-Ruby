@@ -32,14 +32,18 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the node id.
     attr_accessor :node_id
+
 
     # Gets or sets the collection of table's rows.
     attr_accessor :table_row_list
 
+
     # Gets or sets table properties.
     attr_accessor :table_properties
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

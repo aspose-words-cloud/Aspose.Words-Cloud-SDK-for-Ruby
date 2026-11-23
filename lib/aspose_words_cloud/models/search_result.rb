@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the link to result range start node.
     attr_accessor :range_start
 
+
     # Gets or sets the link to result range end node.
     attr_accessor :range_end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

@@ -32,14 +32,18 @@ module AsposeWordsCloud
     # Gets or sets the name of the bookmark.
     attr_accessor :name
 
+
     # Gets or sets text, enclosed in the bookmark.
     attr_accessor :text
+
 
     # Gets or sets the link to start bookmark node.
     attr_accessor :start_range
 
+
     # Gets or sets the link to end bookmark node.
     attr_accessor :end_range
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

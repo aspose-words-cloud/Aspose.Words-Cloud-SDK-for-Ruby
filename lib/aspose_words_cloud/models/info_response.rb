@@ -32,14 +32,18 @@ module AsposeWordsCloud
     # Gets or sets the request Id.
     attr_accessor :request_id
 
+
     # Gets or sets AdditionalInfo.
     attr_accessor :additional_info
+
 
     # Gets or sets Name.
     attr_accessor :name
 
+
     # Gets or sets Version.
     attr_accessor :version
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

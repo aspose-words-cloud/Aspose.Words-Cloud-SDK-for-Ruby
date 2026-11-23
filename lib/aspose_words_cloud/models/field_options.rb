@@ -32,43 +32,56 @@ module AsposeWordsCloud
     # Gets or sets Current User.
     attr_accessor :current_user
 
+
     # Gets or sets Custom Toc Style Separator.
     attr_accessor :custom_toc_style_separator
+
 
     # Gets or sets Default Document Author.
     attr_accessor :default_document_author
 
+
     # Gets or sets Field Index Format.
-    attr_accessor :field_index_format
+    attr_reader :field_index_format
+
 
     # Gets or sets Field Update Culture Name.
     # It is used for all fields if FieldUpdateCultureSource is FieldCode.
     attr_accessor :field_update_culture_name
 
+
     # Gets or sets Field Update Culture Source.
-    attr_accessor :field_update_culture_source
+    attr_reader :field_update_culture_source
+
 
     # Gets or sets File Name.
     attr_accessor :file_name
 
+
     # Gets or sets if Bidi Text Supported OnUpdate.
     attr_accessor :is_bidi_text_supported_on_update
 
+
     # Gets or sets if Legacy Number Format.
     attr_accessor :legacy_number_format
+
 
     # Gets or sets PreProcess Culture Name.
     # It is a culture code for DOC fields.
     attr_accessor :pre_process_culture_name
 
+
     # Gets or sets Template Name.
     attr_accessor :template_name
+
 
     # Gets or sets if Use Invariant Culture Number Format.
     attr_accessor :use_invariant_culture_number_format
 
+
     # Gets or sets BuiltIn Templates Paths.
     attr_accessor :built_in_templates_paths
+
 
     class EnumAttributeValidator
       attr_reader :datatype

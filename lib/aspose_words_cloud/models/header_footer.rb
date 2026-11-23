@@ -32,17 +32,22 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the paragraph's text.
-    attr_accessor :type
+    attr_reader :type
+
 
     # Gets or sets the child nodes.
     attr_accessor :child_nodes
 
+
     # Gets or sets the link to Paragraphs resource.
     attr_accessor :paragraphs
 
+
     # Gets or sets the link to DrawingObjects resource.
     attr_accessor :drawing_objects
+
 
     class EnumAttributeValidator
       attr_reader :datatype

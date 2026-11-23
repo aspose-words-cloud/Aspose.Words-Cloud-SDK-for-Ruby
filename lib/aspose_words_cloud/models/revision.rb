@@ -32,14 +32,18 @@ module AsposeWordsCloud
     # Gets or sets the revision author.
     attr_accessor :revision_author
 
+
     # Gets or sets the revision date time.
     attr_accessor :revision_date_time
+
 
     # Gets or sets the revision text.
     attr_accessor :revision_text
 
+
     # Gets or sets the revision type.
     attr_accessor :revision_type
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

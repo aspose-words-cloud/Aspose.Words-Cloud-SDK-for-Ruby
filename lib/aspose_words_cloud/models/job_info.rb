@@ -32,11 +32,14 @@ module AsposeWordsCloud
     # Gets or sets the job id.
     attr_accessor :job_id
 
+
     # Gets or sets the job message.
     attr_accessor :message
 
+
     # Gets or sets the job status.
-    attr_accessor :status
+    attr_reader :status
+
 
     class EnumAttributeValidator
       attr_reader :datatype

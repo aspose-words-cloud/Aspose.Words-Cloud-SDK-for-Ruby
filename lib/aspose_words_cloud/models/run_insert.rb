@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the run's text.
     attr_accessor :text
 
+
     # Gets or sets the position of the node that will be used to determine the placement of a new run.
     attr_accessor :position
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

@@ -32,11 +32,14 @@ module AsposeWordsCloud
     # Gets or sets the color that's applied to the background of the Shading object.
     attr_accessor :background_pattern_color
 
+
     # Gets or sets the color that's applied to the foreground of the Shading object.
     attr_accessor :foreground_pattern_color
 
+
     # Gets or sets the shading texture.
-    attr_accessor :texture
+    attr_reader :texture
+
 
     class EnumAttributeValidator
       attr_reader :datatype

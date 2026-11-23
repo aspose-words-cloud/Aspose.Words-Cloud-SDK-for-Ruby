@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the case sensitive name of the style to create.
     attr_accessor :style_name
 
+
     # Gets or sets the StyleType value that specifies the type of the style to create.
-    attr_accessor :style_type
+    attr_reader :style_type
+
 
     class EnumAttributeValidator
       attr_reader :datatype

@@ -32,11 +32,14 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the node id.
     attr_accessor :node_id
 
+
     # Gets or sets the run's text.
     attr_accessor :text
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

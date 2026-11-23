@@ -32,20 +32,26 @@ module AsposeWordsCloud
     # Gets or sets comments on the digital signature. The default value is an empty string.
     attr_accessor :comments
 
+
     # Gets or sets the password to decrypt source document. The default value is an empty string.
     attr_accessor :decryption_password
+
 
     # Gets or sets the class Guid of the signature cryptography provider. The default value is Empty (all zeroes) Guid.
     attr_accessor :provider_id
 
+
     # Gets or sets user defined signature line Guid. The default value is Empty (all zeroes) Guid.
     attr_accessor :signature_line_id
+
 
     # Gets or sets the image that will be shown in associated SignatureLine. The default value is an empty string.
     attr_accessor :signature_line_image_filename
 
+
     # Gets or sets the date of signing. The default value is current time (Now).
     attr_accessor :sign_time
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

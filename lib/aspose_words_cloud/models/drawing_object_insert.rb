@@ -32,29 +32,38 @@ module AsposeWordsCloud
     # Gets or sets the position, where the DrawingObject will be inserted.
     attr_accessor :position
 
+
     # Gets or sets the relative horizontal position, from which the distance to the image is measured.
-    attr_accessor :relative_horizontal_position
+    attr_reader :relative_horizontal_position
+
 
     # Gets or sets the distance in points from the origin to the left side of the image.
     attr_accessor :left
 
+
     # Gets or sets the relative vertical position, from which the distance to the image is measured.
-    attr_accessor :relative_vertical_position
+    attr_reader :relative_vertical_position
+
 
     # Gets or sets the distance in points from the origin to the top side of the image.
     attr_accessor :top
 
+
     # Gets or sets the width of the DrawingObjects in points.
     attr_accessor :width
+
 
     # Gets or sets the height of the DrawingObject in points.
     attr_accessor :height
 
+
     # Gets or sets the option indicating how to wrap text around the image.
-    attr_accessor :wrap_type
+    attr_reader :wrap_type
+
 
     # Gets or sets a value indicating whether AspectRatioLocked option on or off.
     attr_accessor :aspect_ratio_locked
+
 
     class EnumAttributeValidator
       attr_reader :datatype

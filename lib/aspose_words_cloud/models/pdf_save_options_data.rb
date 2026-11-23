@@ -35,112 +35,140 @@ module AsposeWordsCloud
     # The default value is false.
     attr_accessor :allow_embedding_post_script_fonts
 
+
     # Gets or sets CustomTimeZoneInfo.
     attr_accessor :custom_time_zone_info_data
 
+
     # Gets or sets the value determining how 3D effects are rendered.
     # The default value is Aspose.Words.Saving.Dml3DEffectsRenderingMode.Basic.
-    attr_accessor :dml3_d_effects_rendering_mode
+    attr_reader :dml3_d_effects_rendering_mode
+
 
     # Gets or sets the value determining how DrawingML effects are rendered.
     # { Simplified | None | Fine }.
     # The default value is Simplified.
     # This property is used when the document is exported to fixed page formats.
-    attr_accessor :dml_effects_rendering_mode
+    attr_reader :dml_effects_rendering_mode
+
 
     # Gets or sets the option that controls how DrawingML shapes are rendered.
     # { Fallback | DrawingML }. The default value is Fallback.
     # This property is used when the document is exported to fixed page formats.
-    attr_accessor :dml_rendering_mode
+    attr_reader :dml_rendering_mode
+
 
     # Gets or sets the name of destination file.
     attr_accessor :file_name
 
+
     # Gets or sets the value determining how ink (InkML) objects are rendered.
     # The default value is Aspose.Words.Saving.ImlRenderingMode.InkML.
-    attr_accessor :iml_rendering_mode
+    attr_reader :iml_rendering_mode
+
 
     # Gets or sets a value indicating whether the font attributes will be changed according to the character code being used.
     attr_accessor :update_ambiguous_text_font
+
 
     # Gets or sets a value determining whether the Aspose.Words.Properties.BuiltInDocumentProperties.CreatedTime property is updated before saving.
     # The default value is false.
     attr_accessor :update_created_time_property
 
+
     # Gets or sets a value indicating whether fields should be updated before saving the document to a fixed page format. The default value is true.
     attr_accessor :update_fields
+
 
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastPrinted property is updated before saving.
     attr_accessor :update_last_printed_property
 
+
     # Gets or sets a value indicating whether the Aspose.Words.Properties.BuiltInDocumentProperties.LastSavedTime property is updated before saving.
     # The default value is false.
     attr_accessor :update_last_saved_time_property
+
 
     # Gets or sets a value indicating whether to zip output or not.
     # The default value is false.
     # When set to true, output files will be zipped.
     attr_accessor :zip_output
 
+
     # Gets or sets the value determining how colors are rendered.
     # { Normal | Grayscale}.
     # The default value is Normal.
     # This property is used when the document is exported to fixed page formats.
-    attr_accessor :color_mode
+    attr_reader :color_mode
+
 
     # Gets or sets the quality of the JPEG images inside PDF document.
     attr_accessor :jpeg_quality
 
+
     # Gets or sets the metafile rendering options.
     attr_accessor :metafile_rendering_options
 
+
     # Gets or sets the symbol set, that is used to represent numbers while rendering to fixed page formats.
-    attr_accessor :numeral_format
+    attr_reader :numeral_format
+
 
     # Gets or sets a value indicating whether it is required to optimize output of XPS.
     # If this flag is set redundant nested canvases and empty canvases are removed, also neighbor glyphs with the same formatting are concatenated.
     # Note: The accuracy of the content display may be affected if this property is set to true.. The default value is false.
     attr_accessor :optimize_output
 
+
     # Gets or sets the number of pages to render.
     attr_accessor :page_count
 
+
     # Gets or sets the 0-based index of the first page to render.
     attr_accessor :page_index
+
 
     # Gets or sets a value determining how attachments are embedded to the PDF document.
     # The default value is None and attachments are not embedded.
     # PDF/A-1, PDF/A-2 and regular PDF/A-4 (not PDF/A-4f) standards do not allow embedded files.
     # None value will be used automatically.
-    attr_accessor :attachments_embedding_mode
+    attr_reader :attachments_embedding_mode
+
 
     # Gets or sets a value determining whether or not to cache graphics placed in document's background.
     # The default value is true and background graphics are written to the PDF document as an xObject. When the value is false background graphics are not cached. Some shapes are not supported for caching(shapes with fields, bookmarks, HRefs). Document background graphic is various shapes, charts, images placed in the footer or header,
     # well as background and border of a page.
     attr_accessor :cache_background_graphics
 
+
     # Gets or sets the PDF standards compliance level for output documents.
-    attr_accessor :compliance
+    attr_reader :compliance
+
 
     # Gets or sets a value indicating whether to convert footnote/endnote references in main text story into active hyperlinks.
     # When clicked the hyperlink will lead to the corresponding footnote/endnote.
     # The default value is false.
     attr_accessor :create_note_hyperlinks
 
+
     # Gets or sets the option that controls the way CustomDocumentProperties are exported to PDF file.
     # The default value is None.
-    attr_accessor :custom_properties_export
+    attr_reader :custom_properties_export
+
 
     # Gets or sets the details for signing the output PDF document.
     attr_accessor :digital_signature_details
+
 
     # Gets or sets a value indicating whether the window’s title bar should display the document title taken from the Title entry of the document information dictionary.
     # If false, the title bar should instead display the name of the PDF file containing the document.
     # The default value is false.
     attr_accessor :display_doc_title
 
+
     # Gets or sets the downsample options.
     attr_accessor :downsample_options
+
 
     # Gets or sets a value determining whether or not to embed attachments to the PDF document.
     # The default value is false and attachments are not embedded.
@@ -150,14 +178,18 @@ module AsposeWordsCloud
     # Embedding attachments is not supported when encryption is enabled. false value will be used automatically.
     attr_accessor :embed_attachments
 
+
     # Gets or sets a value indicating whether fonts are embedded into the resulting PDF documents.
     attr_accessor :embed_full_fonts
+
 
     # Gets or sets the details for encrypting the output PDF document.
     attr_accessor :encryption_details
 
+
     # Gets or sets a value indicating whether to export document structure.
     attr_accessor :export_document_structure
+
 
     # Gets or sets a value determining whether or not to create a "Span" tag in the document structure to export the text language.
     # The default value is false and "Lang" attribute is attached to a marked-content sequence in a page content stream.
@@ -165,8 +197,10 @@ module AsposeWordsCloud
     # This value is ignored when Aspose.Words.Saving.PdfSaveOptions.ExportDocumentStructure is false.
     attr_accessor :export_language_to_span_tag
 
+
     # Gets or sets the font embedding mode.
-    attr_accessor :font_embedding_mode
+    attr_reader :font_embedding_mode
+
 
     # Gets or sets a value determining  whether to generate scripts that emulate specific Microsoft Word form field behavior in PDF.
     # Default is false.
@@ -177,62 +211,79 @@ module AsposeWordsCloud
     # The false value will be used automatically in this case.
     attr_accessor :generate_form_field_scripts
 
+
     # Gets or sets the option that controls how bookmarks in headers/footers are exported.
     # The default value is Aspose.Words.Saving.HeaderFooterBookmarksExportMode.All.
-    attr_accessor :header_footer_bookmarks_export_mode
+    attr_reader :header_footer_bookmarks_export_mode
+
 
     # Gets or sets the option that controls how the color space will be selected for the images in PDF document.
     # The default value is "Auto". If "SimpleCmyk" value is specified, ImageCompression option is ignored and Flate compression is used for all images in the document.
-    attr_accessor :image_color_space_export_mode
+    attr_reader :image_color_space_export_mode
+
 
     # Gets or sets the compression type to be used for all images in the document.
     attr_accessor :image_compression
+
 
     # Gets or sets a value indicating whether image interpolation shall be performed by a conforming reader. When false is specified, the flag is not written to the output document and the default behavior of reader is used instead.
     # When the resolution of a source image is significantly lower than that of the output device, each source sample covers many device pixels. As a result, images can appear jaggy or blocky. These visual artifacts can be reduced by applying an image interpolation algorithm during rendering. Instead of painting all pixels covered by a source sample with the same color, image interpolation attempts to produce a smooth transition between adjacent sample values. A conforming Reader may choose to not implement this feature of PDF, or may use any specific implementation of interpolation that it wishes. The default value is false.
     attr_accessor :interpolate_images
 
+
     # Gets or sets a value indicating whether hyperlinks in the output Pdf document are forced to be opened in a new window (or tab) of a browser.
     attr_accessor :open_hyperlinks_in_new_window
+
 
     # Gets or sets the outline options.
     attr_accessor :outline_options
 
+
     # Gets or sets the option that controls how the PDF document should be displayed when opened in the PDF reader.
-    attr_accessor :page_mode
+    attr_reader :page_mode
+
 
     # Gets or sets a value indicating whether to preblend transparent images with black background color.
     # Preblending images may improve PDF document visual appearance in Adobe Reader and remove anti-aliasing artifacts.In order to properly display preblended images, PDF viewer application must support /Matte entry in soft-mask image dictionary.
     # Also preblending images may decrease PDF rendering performance.The default value is false.
     attr_accessor :preblend_images
 
+
     # Gets or sets a value indicating whether to preserve Microsoft Word form fields as form fields in PDF or convert them to text.
     attr_accessor :preserve_form_fields
+
 
     # Gets or sets a value indicating whether to render PDF choice form field border.
     # PDF choice form fields are used for export of SDT Combo Box Content Control, SDT Drop-Down List Content
     # Control and legacy Drop-Down Form Field when PreserveFormFields option is enabled.The default value is true.
     attr_accessor :render_choice_form_field_border
 
+
     # Gets or sets the compression type to be used for all textual content in the document.
-    attr_accessor :text_compression
+    attr_reader :text_compression
+
 
     # Gets or sets a value indicating whether the document should be saved using a booklet printing layout.
     attr_accessor :use_book_fold_printing_settings
 
+
     # Gets or sets a value indicating whether to substitute TrueType fonts Arial, Times New Roman, Courier New and Symbol with core PDF Type 1 fonts.
     attr_accessor :use_core_fonts
+
 
     # Gets or sets a value indicating whether to use SDT control Tag or Id property as a name of form field in PDF.
     # The default value is false.When set to false, SDT control Id property is used as a name of form field in PDF.When set to true, SDT control Tag property is used as a name of form field in PDF.If set to true and Tag is empty, Id property will be used as a form field name.If set to true and Tag values are not unique, duplicate Tag values will be altered to build
     # unique PDF form field names.
     attr_accessor :use_sdt_tag_as_form_field_name
 
+
     # Gets or sets the option that controls what type of zoom should be applied when a document is opened with a PDF viewer.
-    attr_accessor :zoom_behavior
+    attr_reader :zoom_behavior
+
 
     # Gets or sets the zoom factor (in percentages) for a document.
     attr_accessor :zoom_factor
+
 
     # Gets or sets a value determining whether floating shapes are exported as inline tags in the document structure.
     # The default value is false and floating shapes will be exported as block-level tags,
@@ -240,8 +291,10 @@ module AsposeWordsCloud
     # placed within the paragraph where they are anchored. This value is ignored when ExportDocumentStructure is false.
     attr_accessor :export_floating_shapes_as_inline_tag
 
+
     # Gets the format of save.
     attr_accessor :save_format
+
 
     class EnumAttributeValidator
       attr_reader :datatype

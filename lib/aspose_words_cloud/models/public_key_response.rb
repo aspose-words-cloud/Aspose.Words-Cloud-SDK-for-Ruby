@@ -32,11 +32,14 @@ module AsposeWordsCloud
     # Gets or sets the request Id.
     attr_accessor :request_id
 
+
     # Gets or sets RSA key exponent as Base64 string.
     attr_accessor :exponent
 
+
     # Gets or sets RSA key modulus as Base64 string.
     attr_accessor :modulus
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

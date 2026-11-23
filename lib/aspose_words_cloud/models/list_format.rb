@@ -32,16 +32,20 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the list level number (0 to 8) for the paragraph.
     # In Word documents, lists may consist of 1 or 9 levels, numbered 0 to 8. Has effect only when the Aspose.Words.ListFormat.List property is set to reference a valid list. Aspose.Words.ListFormat.List.
     attr_accessor :list_level_number
+
 
     # Gets or sets the list id of this paragraph.
     # The list that is being assigned to this property must belong to the current document.The list that is being assigned to this property must not be a list style definition.
     attr_accessor :list_id
 
+
     # Gets or sets a value indicating whether the paragraph has bulleted or numbered formatting applied to it.
     attr_accessor :is_list_item
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

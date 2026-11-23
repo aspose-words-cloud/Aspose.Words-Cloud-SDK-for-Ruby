@@ -32,29 +32,37 @@ module AsposeWordsCloud
     # Gets or sets the link to the document.
     attr_accessor :link
 
+
     # Gets or sets the link to comment range start node.
     attr_accessor :range_start
 
+
     # Gets or sets the link to comment range end node.
     attr_accessor :range_end
+
 
     # Gets or sets the author name for a comment.
     # Cannot be null.Default is an empty string.
     attr_accessor :author
 
+
     # Gets or sets the initials of the user associated with a specific comment.
     # Cannot be null.Default is an empty string.
     attr_accessor :initial
 
+
     # Gets or sets the date and time that the comment was made.
     attr_accessor :date_time
+
 
     # Gets or sets text of the comment.
     # This method allows to quickly set text of a comment from a string. The string can contain paragraph breaks, this will create paragraphs of text in the comment accordingly.
     attr_accessor :text
 
+
     # Gets or sets the content of the comment.
     attr_accessor :content
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

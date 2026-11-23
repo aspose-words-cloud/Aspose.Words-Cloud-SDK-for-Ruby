@@ -32,23 +32,30 @@ module AsposeWordsCloud
     # Gets or sets advanced compare options that might help to produce more precise comparison output.
     attr_accessor :advanced_options
 
+
     # Gets or sets the initials of the author to use for revisions.
     attr_accessor :author
+
 
     # Gets or sets the compare options.
     attr_accessor :compare_options
 
+
     # Gets or sets the path to document to compare at the server.
     attr_accessor :comparing_with_document
+
 
     # Gets or sets the date and time to use for revisions.
     attr_accessor :date_time
 
+
     # Gets or sets the file reference.
     attr_accessor :file_reference
 
+
     # Gets or sets the result document format.
     attr_accessor :result_document_format
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

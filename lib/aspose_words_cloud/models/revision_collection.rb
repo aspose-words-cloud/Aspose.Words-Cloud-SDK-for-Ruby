@@ -31,6 +31,7 @@ module AsposeWordsCloud
   class RevisionCollection
     # Gets or sets the revisions.
     attr_accessor :revisions
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {

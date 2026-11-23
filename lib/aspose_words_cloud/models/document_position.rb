@@ -32,8 +32,10 @@ module AsposeWordsCloud
     # Gets or sets the link to a node.
     attr_accessor :node
 
+
     # Gets or sets the offset in the node.
     attr_accessor :offset
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
