@@ -470,7 +470,7 @@ In case when method's result is file then Tempfile class is used to store data. 
 [Tests](tests/) contain various examples of using the SDK.
 
 ## Dependencies
-- Ruby 2.6 or later
+- Ruby 3.3 or later
 - referenced packages (see [here](Gemfile) for more details)
 
 ## Licensing

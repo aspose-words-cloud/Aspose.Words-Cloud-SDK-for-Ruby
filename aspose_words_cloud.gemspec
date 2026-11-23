@@ -15,9 +15,9 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'marcel', '>= 1.0.0'
   s.add_runtime_dependency 'multipart-parser', '>= 0.1.1'
   
-  s.add_development_dependency 'minitest', '~> 5.11', '>= 5.11.3'
+  s.add_development_dependency 'minitest', '~> 6.0'
 
   s.files         = Dir['lib/**/*.rb']
   s.require_paths = ['lib']
-  s.required_ruby_version = '>= 2.6'
+  s.required_ruby_version = '>= 3.3'
 end

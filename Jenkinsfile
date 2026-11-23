@@ -48,7 +48,7 @@ def runtests(dockerImageVersion)
                     }
                     stage('build'){
                             sh "mkdir testReports"
-                            sh "gem install bundler -v 2.0.2 && bundle install"
+                            sh "bundle install"
                     }
                 
                     stage('tests'){   
@@ -80,7 +80,7 @@ def runtests(dockerImageVersion)
 node('sdk-linux') {        	
 	stage('oldruby'){
 		try {
-			runtests("3.1") 
+			runtests("3.3") 
 		} finally {
 			cleanWs()
 		}
@@ -88,7 +88,7 @@ node('sdk-linux') {
 	
 	stage('newruby'){
 		try {
-			runtests("3.4") 
+			runtests("4.0") 
 		} finally {
 			cleanWs()
 		}
