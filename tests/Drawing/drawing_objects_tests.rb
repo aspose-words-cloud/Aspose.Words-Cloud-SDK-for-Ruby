@@ -283,6 +283,38 @@ module AsposeWordsCloud
     end
 
     #
+    # Test for adding drawing object with the image from the storage.
+    #
+    def test_insert_drawing_object_by_reference
+      remote_file_name = 'TestInsertDrawingObjectByReference.docx'
+      remote_image_path = remote_data_folder + '/TestInsertDrawingObjectByReference.png'
+
+      upload_file File.join(local_test_folder, local_file), remote_data_folder + '/' + remote_file_name
+      upload_file File.join(local_test_folder, 'Common/aspose-cloud.png'), remote_image_path
+
+      request_drawing_object_image_reference = AsposeWordsCloud::FileReference.fromRemoteFilePath(remote_image_path)
+      request_drawing_object = DrawingObjectInsertData.new({:Height => 0, :Left => 0, :Top => 0, :Width => 0, :RelativeHorizontalPosition => 'Margin', :RelativeVerticalPosition => 'Margin', :WrapType => 'Inline', :ImageReference => request_drawing_object_image_reference})
+      request = InsertDrawingObjectByReferenceRequest.new(name: remote_file_name, drawing_object: request_drawing_object, node_path: '', folder: remote_data_folder)
+
+       result = @words_api.insert_drawing_object_by_reference(request)
+       assert_equal false, result.nil?
+    end
+
+    #
+    # Test for adding drawing object online with the image from the request.
+    #
+    def test_insert_drawing_object_by_reference_online
+      request_document = File.open(File.join(local_test_folder, local_file))
+      request_drawing_object_image_referenceStream = File.open(File.join(local_test_folder, 'Common/aspose-cloud.png'))
+      request_drawing_object_image_reference = AsposeWordsCloud::FileReference.fromLocalFileContent(request_drawing_object_image_referenceStream)
+      request_drawing_object = DrawingObjectInsertData.new({:Height => 0, :Left => 0, :Top => 0, :Width => 0, :RelativeHorizontalPosition => 'Margin', :RelativeVerticalPosition => 'Margin', :WrapType => 'Inline', :ImageReference => request_drawing_object_image_reference})
+      request = InsertDrawingObjectByReferenceOnlineRequest.new(document: request_document, drawing_object: request_drawing_object, node_path: '')
+
+       result = @words_api.insert_drawing_object_by_reference_online(request)
+       assert_equal false, result.nil?
+    end
+
+    #
     # Test for deleting drawing object.
     #
     def test_delete_drawing_object

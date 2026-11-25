@@ -9454,6 +9454,98 @@ module AsposeWordsCloud
         [data, status_code, headers]
     end
 
+    # Inserts a new DrawingObject to the document node. The image is passed by reference:
+    # a storage path in the document folder or its subfolders, an HTTP(S) URL, or a request part.
+    # @param request InsertDrawingObjectByReferenceRequest
+    # @return [DrawingObjectResponse]
+    def insert_drawing_object_by_reference(request)
+        begin
+        data, _status_code, _headers = insert_drawing_object_by_reference_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_drawing_object_by_reference_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Inserts a new DrawingObject to the document node. The image is passed by reference:
+    # a storage path in the document folder or its subfolders, an HTTP(S) URL, or a request part.
+    # @param request InsertDrawingObjectByReferenceRequest
+    # @return [Array<(DrawingObjectResponse, Fixnum, Hash)>]
+    # DrawingObjectResponse, response status code and response headers
+    private def insert_drawing_object_by_reference_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertDrawingObjectByReferenceRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.insert_drawing_object_by_reference ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        return_type: 'DrawingObjectResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#insert_drawing_object_by_reference\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        [data, status_code, headers]
+    end
+
+    # Inserts a new DrawingObject to the document node. The image is passed by reference:
+    # a storage path in the document folder or its subfolders, an HTTP(S) URL, or a request part.
+    # @param request InsertDrawingObjectByReferenceOnlineRequest
+    # @return [InsertDrawingObjectByReferenceOnlineResponse]
+    def insert_drawing_object_by_reference_online(request)
+        begin
+        data, _status_code, _headers = insert_drawing_object_by_reference_online_with_http_info(request)
+        rescue ApiError => e
+            if e.code == 401
+            request_token
+            data, _status_code, _headers = insert_drawing_object_by_reference_online_with_http_info(request)
+            else
+            raise
+            end
+        end
+        data
+    end
+
+    # Inserts a new DrawingObject to the document node. The image is passed by reference:
+    # a storage path in the document folder or its subfolders, an HTTP(S) URL, or a request part.
+    # @param request InsertDrawingObjectByReferenceOnlineRequest
+    # @return [Array<(InsertDrawingObjectByReferenceOnlineResponse, Fixnum, Hash)>]
+    # InsertDrawingObjectByReferenceOnlineResponse, response status code and response headers
+    private def insert_drawing_object_by_reference_online_with_http_info(request)
+        raise ArgumentError, 'Incorrect request type' unless request.is_a? InsertDrawingObjectByReferenceOnlineRequest
+
+        @api_client.config.logger.debug 'Calling API: WordsApi.insert_drawing_object_by_reference_online ...' if @api_client.config.debugging
+        request_data = request.create_http_request(@api_client)
+
+        data, status_code, headers = @api_client.call_api(
+                                                        request_data[:'method'],
+                                                        request_data[:'path'],
+                                                        header_params: request_data[:'header_params'],
+                                                        query_params: request_data[:'query_params'],
+                                                        body: request_data[:'body'],
+                                                        multipart_response: true,
+                                                        return_type: 'InsertDrawingObjectByReferenceOnlineResponse')
+        if @api_client.config.debugging
+        @api_client.config.logger.debug "API called:
+        WordsApi#insert_drawing_object_by_reference_online\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        end
+
+        mp_data = InsertDrawingObjectByReferenceOnlineResponse.new()
+        mp_data.model = @api_client.deserialize(data['Model'][:data], data['Model'][:headers], 'DrawingObjectResponse')
+        mp_data.document = @api_client.parse_files_collection(data['Document'][:data], data['Document'][:headers])
+        [mp_data, status_code, headers]
+    end
+
     # Inserts a new DrawingObject to the document node.
     # @param request InsertDrawingObjectOnlineRequest
     # @return [InsertDrawingObjectOnlineResponse]

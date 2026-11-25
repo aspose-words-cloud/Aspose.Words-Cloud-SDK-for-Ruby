@@ -147,6 +147,7 @@ module AsposeWordsCloud
       end
       unless self.drawing_object.nil?
         form_params.push({:'Name' => 'drawingObject', :'Data' => self.drawing_object.to_body.to_json, :'MimeType' =>'application/json'})
+        self.drawing_object.collectFilesContent(files_content)
       end
 
       if self.image_file.nil?
@@ -222,6 +223,7 @@ module AsposeWordsCloud
       end
       unless self.drawing_object.nil?
         form_params.push({:'Name' => 'drawingObject', :'Data' => self.drawing_object.to_body.to_json, :'MimeType' =>'application/json'})
+        self.drawing_object.collectFilesContent(files_content)
       end
 
       if self.image_file.nil?
